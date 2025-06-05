@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------
+# Main settings
+# ---------------------------------------------------------------------
+title: "NUP Robotic Lab"
+description: "Site for NUP Robotic Lab"
+baseurl: ""           
+url: "https://nuprobotics.github.io"  
+
+# ---------------------------------------------------------------------
+# Theme and plugins
+# ---------------------------------------------------------------------
+theme: minima        
+plugins:
+  - jekyll-feed      
+  - jekyll-sitemap   
+
+# ---------------------------------------------------------------------
+# Navigation variables (we will use in _includes/header.html)
+# ---------------------------------------------------------------------
+nav_items:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Education"
+    url: "/education/"
+  - title: "Events"
+    url: "/events/"
+  - title: "Contacts"
+    url: "/contacts/"
+
+# ---------------------------------------------------------------------
+# Markdown and date settings
+# ---------------------------------------------------------------------
+markdown: kramdown
+permalink: pretty     
+
+# ---------------------------------------------------------------------
+# Other options (favicon, authorship, social links, etc.)
+# ---------------------------------------------------------------------
+author:
+  name: "NUP Robotic Lab"
+  email: "email@example.com"
+
+# Example of adding social links (optional):
+social_links:
+
+  - name: "GitHub"
+    url: "https://github.com/nuprobotics"
+
+# ---------------------------------------------------------------------
+# Settings for jekyll-feed plugin (if enabled)
+# ---------------------------------------------------------------------
+feed:
+  path: feed.xml
+
+# ---------------------------------------------------------------------
+# Other settings (if you use Sass)
+# ---------------------------------------------------------------------
+sass:
+  sass_dir: _sass
+  style: compressed
