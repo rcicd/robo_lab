@@ -1,0 +1,33 @@
+# Папка с результатами сборки Jekyll
+_site/
+
+# Кэш Jekyll и Sass
+.jekyll-cache/
+.sass-cache/
+
+# Bundler
+.bundle/
+vendor/bundle/
+
+# Конфигурация Bundler
+/.bundle/config
+
+# Локальные файлы редактора и ОС
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Логи
+*.log
+
+# node_modules (если вдруг используете JS-пакеты)
+node_modules/
+
+# Файлы среды (если у вас есть .env)
+.env
+
+# Lock-файлы (необязательно игнорировать, но часто не нужны)
+Gemfile.lock
+yarn.lock
+package-lock.json
