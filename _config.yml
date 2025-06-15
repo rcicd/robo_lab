@@ -3,8 +3,8 @@
 # ---------------------------------------------------------------------
 title: "NUP Robotic Lab"
 description: "Site for NUP Robotic Lab"
-baseurl: ""           
-url: "https://nuprobotics.github.io"  
+url: "https://nuprobotics.github.io"
+baseurl: "/robo_lab"
 
 # ---------------------------------------------------------------------
 # Theme and plugins
