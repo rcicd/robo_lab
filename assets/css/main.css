@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: 'New Tegomin', serif;
+  background-color: black;
+  color: white;
+}
+
+.navbar {
+  background-image: url('/assets/img/navbar-bg.png');
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: black !important;
+  font-weight: 600;
+}
+
+body::before {
+  content: "";
+  display: block;
+  height: 70px; /* компенсация фиксированного navbar */
+}
+
+.robot-left {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  bottom: 0;
+  width: 35vw;
+  background-image: url('/assets/img/robot.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  z-index: 0;
+}
+
+.content-right {
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;     /* вертикальное центрирование */
+  align-items: center;         /* горизонтальное центрирование */
+  flex-direction: column;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .robot-left {
+    width: 25vw;
+  }
+
+  .content-right {
+    margin-left: 25vw;
+  }
+}
+@media (max-width: 768px) {
+  .robot-left {
+    display: none;
+  }
+
+  .content-right {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .lab-title {
+    font-size: 2rem;
+  }
+
+  .lab-description {
+    font-size: 1rem;
+  }
+}
+
+.lab-title {
+  font-size: 2.5rem;
+  padding-top: 2rem;
+}
+
+.lab-description {
+  font-size: 1.25rem;
+  padding-top: 1rem;
+}
