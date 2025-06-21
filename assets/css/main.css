@@ -6,7 +6,7 @@ body {
 }
 
 .navbar {
-  background-image: url('/assets/img/navbar-bg.png');
+
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
   position: fixed;
@@ -14,30 +14,43 @@ body {
   width: 100%;
   z-index: 1000;
 }
+.navbar-brand {
+color: lightgrey;
+}
+
+.nav-link {
+color: lightgrey;
+}
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    color: lightgrey;
+}
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: black !important;
+
   font-weight: 600;
 }
 
 body::before {
   content: "";
   display: block;
-  height: 70px; /* компенсация фиксированного navbar */
+  height: 70px;
 }
 
 .robot-left {
-  position: fixed;
-  left: 0;
-  top: 70px;
-  bottom: 0;
-  width: 35vw;
-  background-image: url('/assets/img/robot.png');
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: contain;
-  z-index: 0;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    bottom: 0;
+    width: 35vw;
+    background-image: url('../img/robot.png');
+    background-repeat: no-repeat;
+    /*background-position: left center;
+    background-size: cover;  вместо contain */
+    z-index: 0;
+     background-size: auto 100%; /* высота 100%, ширина автоматически */
+    background-position: left center;
 }
 
 .content-right {
@@ -45,14 +58,15 @@ body::before {
   min-height: 100vh;
 
   display: flex;
-  justify-content: center;     /* вертикальное центрирование */
-  align-items: center;         /* горизонтальное центрирование */
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   text-align: center;
 }
 @media (max-width: 992px) {
   .robot-left {
     width: 25vw;
+
   }
 
   .content-right {
