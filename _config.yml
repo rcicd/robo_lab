@@ -1,4 +1,5 @@
 title: "NUP Robotic Lab"
 description: "Site for NUP Robotic Lab"
-url: "https://rcicd.github.io/robo_lab"
+baseurl: "/robo_lab"
+url: "https://rcicd.github.io"
 
