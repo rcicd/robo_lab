@@ -1,3 +1,18 @@
-<header class="site-header">
-  <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
-</header>
+<nav class="navbar navbar-expand-md p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/research">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/schools">Schools</a></li>
+        <li class="nav-item">
+  <a class="nav-link {% if page.url contains 'about' %}active{% endif %}" href="{{ site.baseurl }}/about">Our Lab</a>
+</li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'New Tegomin', serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: black;
   color: white;
 }
@@ -15,21 +15,35 @@ body {
   z-index: 1000;
 }
 .navbar-brand {
+font-family: 'New Tegomin', serif;
+color: lightgrey;
+font-size: 2rem;
+}
+.navbar-brand:hover {
 color: lightgrey;
 }
+
 
 .nav-link {
 color: lightgrey;
 }
-.navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover{
     text-decoration: underline;
-    color: lightgrey;
+    color: #6289a0 !important;
 }
 
-.navbar .nav-link,
-.navbar .navbar-brand {
+.navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link.active {
+    color: lightgrey !important;
+    text-decoration: underline !important;
+}
 
-  font-weight: 600;
+
+
+.navbar .nav-link,
+.navbar {
+   font-size: 1.5rem;
+  /*font-weight: 600;*/
 }
 
 body::before {
@@ -41,15 +55,15 @@ body::before {
 .robot-left {
     position: fixed;
     left: 0;
-    top: 70px;
+    top: calc(4.5rem + 24px);
+
     bottom: 0;
     width: 35vw;
     background-image: url('../img/robot.png');
     background-repeat: no-repeat;
-    /*background-position: left center;
-    background-size: cover;  вместо contain */
+
     z-index: 0;
-     background-size: auto 100%; /* высота 100%, ширина автоматически */
+     background-size: auto 100%;
     background-position: left center;
 }
 
@@ -88,16 +102,23 @@ body::before {
   }
 
   .lab-description {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
 .lab-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   padding-top: 2rem;
 }
 
 .lab-description {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   padding-top: 1rem;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
 }
