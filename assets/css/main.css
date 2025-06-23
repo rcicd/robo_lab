@@ -73,7 +73,7 @@ body::before {
 
   display: flex;
   justify-content: center;
-  align-items: center;
+
   flex-direction: column;
   text-align: center;
 }
@@ -118,7 +118,32 @@ body::before {
 
 @media (min-width: 992px) {
     .navbar {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
     }
+}
+
+.nav-robot-arm {
+  height: 100px;
+  width: auto;
+  margin-right: -10px;
+  vertical-align: top;
+  z-index: 1000;
+  position: relative;
+  top: -23px;
+}
+
+
+@media (max-width: 768px) {
+  .nav-robot-arm {
+    height: 20px;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-robot-arm {
+    height: 18px;
+    margin-right: 4px;
+  }
 }
