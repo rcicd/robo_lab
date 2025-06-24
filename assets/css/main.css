@@ -1,3 +1,4 @@
+/* ===== ОСНОВНЫЕ СТИЛИ ===== */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -5,88 +6,119 @@ body {
   color: white;
 }
 
-.navbar {
-
-  background-size: cover;
-  font-family: 'Montserrat', sans-serif;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-.navbar-brand {
-font-family: 'New Tegomin', serif;
-color: lightgrey;
-font-size: 2rem;
-}
-.navbar-brand:hover {
-color: lightgrey;
-}
-
-
-.nav-link {
-color: lightgrey;
-}
-.navbar-nav .nav-link:hover{
-    text-decoration: underline;
-    color: #6289a0 !important;
-}
-
-.navbar-nav .nav-link.active,
-.navbar .navbar-nav .nav-link.active {
-    color: lightgrey !important;
-    text-decoration: underline !important;
-}
-
-
-
-.navbar .nav-link,
-.navbar {
-   font-size: 1.5rem;
-  /*font-weight: 600;*/
-}
-
+/* Компенсация фиксированной навигации */
 body::before {
   content: "";
   display: block;
   height: 70px;
 }
 
-.robot-left {
-    position: fixed;
-    left: 0;
-    top: calc(4.5rem + 24px);
-
-    bottom: 0;
-    width: 35vw;
-    background-image: url('../img/robot.png');
-    background-repeat: no-repeat;
-
-    z-index: 0;
-     background-size: auto 100%;
-    background-position: left center;
+/* ===== НАВИГАЦИЯ ===== */
+.navbar {
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
+/* Логотип */
+.navbar-brand {
+  font-family: 'New Tegomin', serif;
+  font-size: 2rem;
+  color: lightgrey;
+}
+
+.navbar-brand:hover {
+  color: lightgrey;
+}
+
+/* Ссылки навигации */
+.nav-link {
+  color: lightgrey;
+}
+
+.navbar-nav .nav-link:hover {
+  text-decoration: underline;
+  color: #6289a0 !important;
+}
+
+.navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link.active {
+  color: lightgrey !important;
+  text-decoration: underline !important;
+}
+
+/* Иконка робота в навигации */
+.nav-robot-arm {
+  height: 100px;
+  width: auto;
+  margin-left: -89px;
+  vertical-align: top;
+  z-index: 1000;
+  position: absolute;
+  top: 4px;
+  pointer-events: none;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+/* Робот слева */
+.robot-left {
+  position: fixed;
+  left: 0;
+  top: calc(4.5rem + 24px);
+  bottom: 0;
+  width: 35vw;
+  background-image: url('../img/robot.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: left center;
+  z-index: 0;
+}
+
+/* Контент справа */
 .content-right {
-
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
-
   flex-direction: column;
   text-align: center;
 }
+
+/* Заголовки */
+.lab-title {
+  font-size: 3rem;
+  padding-top: 2rem;
+}
+
+.lab-description {
+  font-size: 1.75rem;
+  padding-top: 1rem;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+/* Десктопы (992px+) */
+@media (min-width: 992px) {
+  .navbar {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+
+/* Планшеты (768px - 992px) */
 @media (max-width: 992px) {
   .robot-left {
     width: 25vw;
-
   }
 
   .content-right {
     margin-left: 25vw;
   }
 }
+
+/* Мобильные устройства (до 768px) */
 @media (max-width: 768px) {
   .robot-left {
     display: none;
@@ -104,46 +136,17 @@ body::before {
   .lab-description {
     font-size: 1.5rem;
   }
-}
 
-.lab-title {
-  font-size: 3rem;
-  padding-top: 2rem;
-}
-
-.lab-description {
-  font-size: 1.75rem;
-  padding-top: 1rem;
-}
-
-@media (min-width: 992px) {
-    .navbar {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-    }
-}
-
-.nav-robot-arm {
-  height: 100px;
-  width: auto;
-  margin-right: -10px;
-  vertical-align: top;
-  z-index: 1000;
-  position: relative;
-  top: -23px;
-}
-
-
-@media (max-width: 768px) {
   .nav-robot-arm {
     height: 20px;
     margin-right: 6px;
   }
 }
 
+/* Очень маленькие экраны (до 480px) */
 @media (max-width: 480px) {
   .nav-robot-arm {
-    height: 18px;
+    height: 10px;
     margin-right: 4px;
   }
 }
