@@ -124,10 +124,6 @@ body {
   height: 100%;
 }
 
-/* Контент справа
-.content-column {
-  padding-top: var(--content-padding-top);
-}*/
 
 .content-wrapper {
   min-height: calc(100vh - var(--content-margin-top) - var(--navbar-total-height));
@@ -135,7 +131,7 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  /* padding-bottom: 2rem;  добавляем небольшой отступ снизу */
+
 }
 
 /* Старый стиль для обратной совместимости */

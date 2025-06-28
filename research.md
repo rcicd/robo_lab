@@ -7,5 +7,7 @@ fields_of_interest:
   - "SLAM algorithms"
   - "Computer Vision"
   - "Robotics"
+  - "Machine Learning"
+  - "Artificial Intelligence"
 ---
 

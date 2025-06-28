@@ -1,242 +1,213 @@
+:root {
+  /* Переменные для research страницы */
+  --research-title-size: 2.5rem;
+  --research-title-margin-bottom: 2.5rem;
+  --research-inner-padding: 2rem;
+  --research-container-padding: 0 1rem;
 
+  /* Переменные для fields section */
+  --fields-section-margin-bottom: 2rem;
+  --fields-title-size: 1.8rem;
+  --fields-title-margin-bottom: 3rem;
+
+  /* Переменные для field tags */
+  --field-tag-padding: 0.8rem 2.5rem;
+  --field-tag-font-size: 1.15rem;
+  --field-tag-gap: 2rem;
+  --field-tag-border-width: 2px;
+  --field-tag-border-radius: 35px;
+  --field-tag-transition: all 0.3s ease;
+
+  /* Переменные для смещения */
+  --field-offset-amount: 50%;
+}
 
 .research-container {
   width: 100%;
-  max-width: 100%; /* Ограничиваем максимальную ширину */
-  padding: 0 0.5rem; /* Минимальный padding */
+  max-width: 100%;
+  padding: var(--research-container-padding);
   box-sizing: border-box;
-  height: 100%; /* Используем всю доступную высоту */
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .research-title {
-  font-size: 2.5rem; /* Уменьшаем размер */
-  margin-bottom: 1.5rem; /* Уменьшаем отступ */
+  font-size: var(--research-title-size);
+  margin-bottom: var(--research-title-margin-bottom);
   text-align: center;
   color: white;
 }
 
 .research-inner-content {
   background-color: rgba(0, 0, 0, 0.9);
-  padding: 1.5rem; /* Уменьшаем padding */
-  border-radius: 10px;
+  padding: var(--research-inner-padding);
+  border-radius: 15px;
   width: 100%;
-  max-width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   box-sizing: border-box;
-  max-height: 70vh; /* Ограничиваем высоту */
-  overflow-y: auto; /* Если контент не помещается, добавляем внутреннюю прокрутку */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Fields Section */
 .fields-section {
-  margin-bottom: 1.5rem; /* Уменьшаем отступ */
+  margin-bottom: var(--fields-section-margin-bottom);
+  width: 100%;
 }
 
-.fields-section h2 {
-  font-size: 1.3rem; /* Уменьшаем размер */
-  margin-bottom: 1rem; /* Уменьшаем отступ */
+.fields-section h1 {
+  font-size: var(--fields-title-size);
+  margin-bottom: var(--fields-title-margin-bottom);
   color: white;
-  text-align: left; /* Заголовок по левому краю */
+  text-align: center;
+  margin-top: -1rem;
+  font-weight: 500;
 }
 
 .fields-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: flex-start; /* Теги по левому краю */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--field-tag-gap);
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Смещение для создания кирпичного эффекта с 3 колонками */
+/* Второй ряд (элементы 4, 5, 6) смещается влево */
+.fields-container .field-tag:nth-child(4),
+.fields-container .field-tag:nth-child(5),
+.fields-container .field-tag:nth-child(6) {
+  transform: translateX(calc(-1 * var(--field-offset-amount)));
+}
+
+/* Третий ряд (элементы 7, 8, 9) без смещения (как первый ряд) */
+.fields-container .field-tag:nth-child(7),
+.fields-container .field-tag:nth-child(8),
+.fields-container .field-tag:nth-child(9) {
+  transform: translateX(0);
+}
+
+/* Четвертый ряд (элементы 10, 11, 12) снова смещается влево */
+.fields-container .field-tag:nth-child(10),
+.fields-container .field-tag:nth-child(11),
+.fields-container .field-tag:nth-child(12) {
+  transform: translateX(calc(-1 * var(--field-offset-amount)));
+}
+
+/* Пятый ряд (элементы 13, 14, 15) без смещения */
+.fields-container .field-tag:nth-child(13),
+.fields-container .field-tag:nth-child(14),
+.fields-container .field-tag:nth-child(15) {
+  transform: translateX(0);
 }
 
 .field-tag {
-  padding: 0.5rem 1.5rem;
-  border-radius: 25px;
-  font-size: 1rem;
+  padding: var(--field-tag-padding);
+  border-radius: var(--field-tag-border-radius);
+  font-size: var(--field-tag-font-size);
   background-color: transparent;
-  border: 2px solid var(--primary-color, #6289a0);
+  border: var(--field-tag-border-width) solid var(--primary-color, #6289a0);
   color: white;
-  transition: all 0.3s ease;
+  transition: var(--field-tag-transition);
   white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
 }
 
 .field-tag:hover {
   background-color: var(--primary-color, #6289a0);
   color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(98, 137, 160, 0.3);
 }
 
-/* Publications Section */
-.publications-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: white;
+/* Сохраняем смещение при hover для смещенных элементов */
+.fields-container .field-tag:nth-child(4):hover,
+.fields-container .field-tag:nth-child(5):hover,
+.fields-container .field-tag:nth-child(6):hover,
+.fields-container .field-tag:nth-child(10):hover,
+.fields-container .field-tag:nth-child(11):hover,
+.fields-container .field-tag:nth-child(12):hover {
+  transform: translateX(calc(-1 * var(--field-offset-amount))) translateY(-2px);
 }
 
-.year-section {
-  margin-bottom: 3rem;
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+  :root {
+    --field-offset-amount: 33.33%;
+  }
+
+  .fields-container {
+    max-width: 750px;
+    gap: 1.5rem;
+  }
 }
 
-.year-title {
-  font-size: 1.3rem;
-  text-align: right;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.publication-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-}
-
-.pub-authors {
-  color: #999;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.pub-name {
-  color: white;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.pub-doi {
-  color: #666;
-  font-size: 0.85rem;
-}
-
-/* Адаптивность для планшетов (850px и меньше) */
 @media (max-width: 850px) {
-  .content-right {
-    margin-left: 20vw; /* Уменьшенный отступ от робота */
-    width: 80vw; /* Соответствующая ширина */
-    max-width: 80vw;
-    padding: 1rem;
-    height: calc(100vh - 70px);
+  .fields-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
   }
 
-  .research-container {
-    padding: 0 0.5rem;
+  /* Для двух колонок возвращаем логику смещения */
+  .fields-container .field-tag:nth-child(3),
+  .fields-container .field-tag:nth-child(4) {
+    transform: translateX(25%);
   }
 
-  .research-title {
-    font-size: 2rem;
+  .fields-container .field-tag:nth-child(5),
+  .fields-container .field-tag:nth-child(6) {
+    transform: translateX(-25%);
   }
 
-  .research-inner-content {
-    padding: 1.5rem;
-    max-height: 75vh;
+  /* Убираем смещение для остальных элементов на планшетах */
+  .fields-container .field-tag:nth-child(n+7) {
+    transform: none;
+  }
+
+  /* Обновляем hover для двух колонок */
+  .fields-container .field-tag:nth-child(3):hover,
+  .fields-container .field-tag:nth-child(4):hover {
+    transform: translateX(25%) translateY(-2px);
+  }
+
+  .fields-container .field-tag:nth-child(5):hover,
+  .fields-container .field-tag:nth-child(6):hover {
+    transform: translateX(-25%) translateY(-2px);
   }
 }
 
-/* Адаптивность для мобильных (790px и меньше) */
+/* Адаптивность для мобильных устройств */
 @media (max-width: 790px) {
-  .content-right {
-    margin-left: 0; /* Убираем отступ - робот скрыт */
-    width: 100vw; /* Полная ширина экрана */
-    max-width: 100vw;
-    padding: 0.5rem;
-    height: calc(100vh - 70px);
-    text-align: left; /* Выравнивание по левому краю */
-  }
-
-  .research-container {
-    padding: 0 0.25rem;
-  }
-
-  .research-title {
-    font-size: 1.75rem;
-    text-align: center; /* Заголовок по центру */
-    margin-bottom: 1rem;
-  }
-
-  .research-inner-content {
-    padding: 1rem;
-    border-radius: 0;
-    background-color: black;
-    max-height: 80vh;
-  }
-
   .fields-container {
-    justify-content: flex-start;
-    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Убираем смещение на мобильных */
+  .fields-container .field-tag {
+    transform: none !important;
+  }
+
+  .fields-container .field-tag:hover {
+    transform: translateY(-2px) !important;
   }
 
   .field-tag {
-    font-size: 0.9rem;
-    padding: 0.4rem 1.2rem;
+    max-width: 300px;
   }
 }
 
-/* Маленькие мобильные (480px и меньше) */
 @media (max-width: 480px) {
-  .content-right {
-    padding: 0.5rem;
-  }
-
-  .research-container {
-    padding: 0 0.5rem;
-  }
-
-  .research-title {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .research-inner-content {
-    padding: 1.5rem 1rem;
-  }
-
-  .fields-section h2,
-  .publications-section h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-
-  .fields-container {
-    gap: 0.5rem;
-  }
-
-  .field-tag {
-    font-size: 0.85rem;
-    padding: 0.35rem 1rem;
-  }
-
-  .year-title {
-    font-size: 1.1rem;
-  }
-
-  .publication-card {
-    padding: 1rem;
-  }
-
-  .pub-name {
-    font-size: 1rem;
-  }
-
-  .pub-authors {
-    font-size: 0.85rem;
-  }
-}
-
-/* Очень маленькие экраны (360px и меньше) */
-@media (max-width: 360px) {
-  .research-title {
-    font-size: 1.5rem;
-  }
-
-  .research-inner-content {
-    padding: 1rem 0.75rem;
-  }
-
-  .field-tag {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.8rem;
-  }
-
-  .fields-section h2 {
-    font-size: 1.1rem;
+  :root {
+    --field-tag-padding: 0.6rem 2rem;
+    --field-tag-font-size: 1rem;
   }
 }
