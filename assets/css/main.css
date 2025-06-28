@@ -95,11 +95,11 @@ body {
 .nav-robot-arm {
   height: 100px;
   width: auto;
-  margin-left: -89px;
+  margin-left: -88px;
   vertical-align: top;
   z-index: 1000;
   position: absolute;
-  top: 4px;
+  top: 2px;
   pointer-events: none;
 }
 
