@@ -1,0 +1,242 @@
+
+
+.research-container {
+  width: 100%;
+  max-width: 100%; /* Ограничиваем максимальную ширину */
+  padding: 0 0.5rem; /* Минимальный padding */
+  box-sizing: border-box;
+  height: 100%; /* Используем всю доступную высоту */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.research-title {
+  font-size: 2.5rem; /* Уменьшаем размер */
+  margin-bottom: 1.5rem; /* Уменьшаем отступ */
+  text-align: center;
+  color: white;
+}
+
+.research-inner-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1.5rem; /* Уменьшаем padding */
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  max-height: 70vh; /* Ограничиваем высоту */
+  overflow-y: auto; /* Если контент не помещается, добавляем внутреннюю прокрутку */
+}
+
+/* Fields Section */
+.fields-section {
+  margin-bottom: 1.5rem; /* Уменьшаем отступ */
+}
+
+.fields-section h2 {
+  font-size: 1.3rem; /* Уменьшаем размер */
+  margin-bottom: 1rem; /* Уменьшаем отступ */
+  color: white;
+  text-align: left; /* Заголовок по левому краю */
+}
+
+.fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start; /* Теги по левому краю */
+}
+
+.field-tag {
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid var(--primary-color, #6289a0);
+  color: white;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.field-tag:hover {
+  background-color: var(--primary-color, #6289a0);
+  color: black;
+}
+
+/* Publications Section */
+.publications-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.year-section {
+  margin-bottom: 3rem;
+}
+
+.year-title {
+  font-size: 1.3rem;
+  text-align: right;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.publication-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.pub-authors {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.pub-name {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pub-doi {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Адаптивность для планшетов (850px и меньше) */
+@media (max-width: 850px) {
+  .content-right {
+    margin-left: 20vw; /* Уменьшенный отступ от робота */
+    width: 80vw; /* Соответствующая ширина */
+    max-width: 80vw;
+    padding: 1rem;
+    height: calc(100vh - 70px);
+  }
+
+  .research-container {
+    padding: 0 0.5rem;
+  }
+
+  .research-title {
+    font-size: 2rem;
+  }
+
+  .research-inner-content {
+    padding: 1.5rem;
+    max-height: 75vh;
+  }
+}
+
+/* Адаптивность для мобильных (790px и меньше) */
+@media (max-width: 790px) {
+  .content-right {
+    margin-left: 0; /* Убираем отступ - робот скрыт */
+    width: 100vw; /* Полная ширина экрана */
+    max-width: 100vw;
+    padding: 0.5rem;
+    height: calc(100vh - 70px);
+    text-align: left; /* Выравнивание по левому краю */
+  }
+
+  .research-container {
+    padding: 0 0.25rem;
+  }
+
+  .research-title {
+    font-size: 1.75rem;
+    text-align: center; /* Заголовок по центру */
+    margin-bottom: 1rem;
+  }
+
+  .research-inner-content {
+    padding: 1rem;
+    border-radius: 0;
+    background-color: black;
+    max-height: 80vh;
+  }
+
+  .fields-container {
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .field-tag {
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+/* Маленькие мобильные (480px и меньше) */
+@media (max-width: 480px) {
+  .content-right {
+    padding: 0.5rem;
+  }
+
+  .research-container {
+    padding: 0 0.5rem;
+  }
+
+  .research-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .research-inner-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .fields-section h2,
+  .publications-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .fields-container {
+    gap: 0.5rem;
+  }
+
+  .field-tag {
+    font-size: 0.85rem;
+    padding: 0.35rem 1rem;
+  }
+
+  .year-title {
+    font-size: 1.1rem;
+  }
+
+  .publication-card {
+    padding: 1rem;
+  }
+
+  .pub-name {
+    font-size: 1rem;
+  }
+
+  .pub-authors {
+    font-size: 0.85rem;
+  }
+}
+
+/* Очень маленькие экраны (360px и меньше) */
+@media (max-width: 360px) {
+  .research-title {
+    font-size: 1.5rem;
+  }
+
+  .research-inner-content {
+    padding: 1rem 0.75rem;
+  }
+
+  .field-tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .fields-section h2 {
+    font-size: 1.1rem;
+  }
+}
