@@ -46,7 +46,7 @@ body {
 /* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
 .main-container {
   padding-top: var(--content-margin-top);
-  min-height: 100vh;
+  min-height: calc(100vh - var(--content-margin-top));
 }
 
 /* Логотип */
@@ -121,20 +121,21 @@ body {
 /* Колонка с роботом */
 .robot-column {
   position: relative;
-  height: calc(100vh - var(--content-margin-top));
+  height: 100%;
 }
 
-/* Контент справа */
+/* Контент справа
 .content-column {
   padding-top: var(--content-padding-top);
-}
+}*/
 
 .content-wrapper {
-  min-height: calc(100vh - var(--content-margin-top) - var(--content-padding-top));
+  min-height: calc(100vh - var(--content-margin-top) - var(--navbar-total-height));
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  /* padding-bottom: 2rem;  добавляем небольшой отступ снизу */
 }
 
 /* Старый стиль для обратной совместимости */
