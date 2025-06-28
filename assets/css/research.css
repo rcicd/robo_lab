@@ -20,6 +20,19 @@
 
   /* Переменные для смещения */
   --field-offset-amount: 50%;
+
+  /* Переменные для публикаций */
+  --publications-margin-top: 4rem;
+  --research-title-size: 2.5rem;
+  --research-title-margin-bottom: 3rem;
+  --year-title-size: 2rem;
+  --year-title-margin-bottom: 2rem;
+  --publication-item-margin-bottom: 2.5rem;
+  --publication-item-padding: 1.5rem;
+  --publication-border-color: rgba(98, 137, 160, 0.5);
+  --publication-authors-size: 1.15rem;
+  --publication-title-size: 1.25rem;
+  --publication-doi-size: 1rem;
 }
 
 .research-container {
@@ -31,6 +44,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+   text-align: left;
 }
 
 .research-title {
@@ -59,14 +73,6 @@
   width: 100%;
 }
 
-.fields-section h1 {
-  font-size: var(--fields-title-size);
-  margin-bottom: var(--fields-title-margin-bottom);
-  color: white;
-  text-align: center;
-  margin-top: -2rem;
-  font-weight: 550;
-}
 
 .fields-container {
   display: grid;
@@ -138,8 +144,74 @@
   transform: translateX(calc(-1 * var(--field-offset-amount))) translateY(-2px);
 }
 
-/* Адаптивность для планшетов */
-@media (max-width: 1024px) {
+/* Publications Section */
+.publications-section {
+  margin-top: var(--publications-margin-top);
+  width: 100%;
+}
+
+.research-title {
+  margin-top: var(--publications-margin-top);
+  font-size: var(--research-title-size);
+  margin-bottom: var(--research-title-margin-bottom);
+  color: white;
+  text-align: left;
+  font-weight: 400;
+}
+
+.year-section {
+  margin-bottom: 3rem;
+}
+
+.year-title {
+  font-size: var(--year-title-size);
+  margin-bottom: var(--year-title-margin-bottom);
+  color: white;
+  text-align: right;
+  font-weight: 400;
+  border-bottom: 1px solid var(--publication-border-color);
+  padding-bottom: 0.5rem;
+}
+
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.publication-item {
+  background-color: transparent;
+  border: 1px solid var(--publication-border-color);
+  border-radius: 10px;
+  padding: var(--publication-item-padding);
+  margin-bottom: var(--publication-item-margin-bottom);
+  transition: all 0.3s ease;
+}
+
+.publication-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(98, 137, 160, 0.2);
+}
+
+.publication-authors {
+  font-size: var(--publication-authors-size);
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.publication-title {
+  font-size: var(--publication-title-size);
+  color: white;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.publication-doi {
+  font-size: var(--publication-doi-size);
+  color: var(--text-light);
+}
+
+/*@media (max-width: 1024px) {
   :root {
     --field-offset-amount: 33.33%;
   }
@@ -148,9 +220,9 @@
     max-width: 750px;
     gap: 1.5rem;
   }
-}
+}*/
 
-@media (max-width: 850px) {
+@media (max-width: 1179px) {
   .fields-container {
     grid-template-columns: repeat(2, 1fr);
     max-width: 600px;
@@ -182,16 +254,22 @@
   .fields-container .field-tag:nth-child(6):hover {
     transform: translateX(-25%) translateY(-2px);
   }
+
+  .research-title {
+    font-size: 2rem;
+  }
+
+  .year-title {
+    font-size: 1.5rem;
+  }
 }
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 790px) {
   .fields-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  /* Убираем смещение на мобильных */
   .fields-container .field-tag {
     transform: none !important;
   }
@@ -203,6 +281,22 @@
   .field-tag {
     max-width: 300px;
   }
+
+  .publication-item {
+    padding: 1rem;
+  }
+
+  .publication-authors {
+    font-size: 1rem;
+  }
+
+  .publication-title {
+    font-size: 1.1rem;
+  }
+
+  .publication-doi {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -210,4 +304,13 @@
     --field-tag-padding: 0.6rem 2rem;
     --field-tag-font-size: 1rem;
   }
+
+  .research-title {
+    font-size: 1.75rem;
+  }
+
+  .year-title {
+    font-size: 1.25rem;
+  }
 }
+
