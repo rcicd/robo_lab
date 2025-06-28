@@ -1,20 +1,47 @@
 ---
 layout: base
 ---
- <div class="research-container">
-<!--  <h1 class="research-title">{{ page.title }}</h1>-->
-
+<div class="research-container">
   <div class="research-inner-content">
     <!-- Fields of Interest Section -->
     <div class="fields-section">
-      <h1>Our fields of interest</h1>
+      <h1 class="research-title">Our fields of interest</h1>
       <div class="fields-container">
         {% for field in page.fields_of_interest %}
           <span class="field-tag">{{ field }}</span>
         {% endfor %}
       </div>
     </div>
+
+    <!-- Publications Section -->
+    <div class="publications-section">
+      <h1 class="research-title">Publications</h1>
+
+      {% if page.publications %}
+        {% for year_data in page.publications %}
+          {% if year_data[1] and year_data[1].size > 0 %}
+            <div class="year-section">
+              <h2 class="year-title">
+                {% if year_data[0] == "in_progress" %}
+                  In progress
+                {% else %}
+                  {{ year_data[0] }}
+                {% endif %}
+              </h2>
+
+              <div class="publications-list">
+                {% for pub in year_data[1] %}
+                  <div class="publication-item">
+                    <div class="publication-authors">{{ pub.authors }}</div>
+                    <div class="publication-title">{{ pub.name }}</div>
+                    <div class="publication-doi">{{ pub.doi }}</div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
   </div>
 </div>
-
-
