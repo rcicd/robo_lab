@@ -30,9 +30,9 @@
   --publication-item-margin-bottom: 2.5rem;
   --publication-item-padding: 1.5rem;
   --publication-border-color: rgba(98, 137, 160, 0.5);
-  --publication-authors-size: 1.15rem;
-  --publication-title-size: 1.25rem;
-  --publication-doi-size: 1rem;
+  --publication-authors-size: 1.55rem;
+  --publication-title-size: 1.75rem;
+  --publication-doi-size: 1.55rem;
 }
 
 .research-container {
@@ -59,7 +59,7 @@
   padding: var(--research-inner-padding);
   border-radius: 15px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
@@ -79,8 +79,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--field-tag-gap);
   justify-items: center;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 0;
 }
 
 /* Смещение для создания кирпичного эффекта с 3 колонками */
@@ -210,17 +210,6 @@
   font-size: var(--publication-doi-size);
   color: var(--text-light);
 }
-
-/*@media (max-width: 1024px) {
-  :root {
-    --field-offset-amount: 33.33%;
-  }
-
-  .fields-container {
-    max-width: 750px;
-    gap: 1.5rem;
-  }
-}*/
 
 @media (max-width: 1179px) {
   .fields-container {

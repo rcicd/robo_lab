@@ -17,7 +17,7 @@
   --navbar-collapse-margin-top: 1rem;
   --nav-item-margin: 0.5rem 0;
   --content-padding: 1rem;
-  --content-margin-left-desktop: 35vw;
+  --content-margin-left-desktop: 30vw;
   --content-margin-left-tablet: 20vw;
   --lab-title-padding-top: 2rem;
   --lab-description-padding-top: 1rem;
@@ -91,7 +91,7 @@ body {
   text-decoration: underline !important;
 }
 
-/* Иконка робота в навигации */
+
 .nav-robot-arm {
   height: 100px;
   width: auto;
@@ -110,7 +110,7 @@ body {
   left: 0;
   top: var(--content-margin-top);
   bottom: 0;
-  width: 35vw;
+  width: 30vw;
   background-image: url('../img/robot.png');
   background-repeat: no-repeat;
   background-size: auto 100%;
