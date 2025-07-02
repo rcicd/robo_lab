@@ -8,24 +8,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=New+Tegomin&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}">
+
 </head>
 <body>
   {% include header.html %}
 
-  <div class="container-fluid main-container">
-    <div class="row h-100">
-      <!-- Левая колонка с роботом -->
-      <div class="col-lg-3 col-xl-2 d-none d-lg-block p-0 robot-column">
-        <div class="robot-left"></div>
-      </div>
 
-      <!-- Правая колонка с контентом -->
-      <div class="col-lg-9 col-xl-10 col-12 content-column">
-        <div class="content-wrapper">
-          {{ content }}
-        </div>
-      </div>
-    </div>
+
+
+
+
+  <div class="container-fluid main-container">
+     <div class="row h-100">
+         <div class="col-lg-3 col-xl-2 d-none d-lg-block p-0 robot-column">
+
+<div class="robot-left"></div>  </div>
+
+  <div class="col-lg-9 col-xl-10 col-12 content-column">
+    <div class="content-wrapper">
+      {{ content }}
+
+  </div>
+</div>
+       </div>
+
   </div>
 
   {% include footer.html %}
