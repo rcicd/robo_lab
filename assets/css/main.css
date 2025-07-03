@@ -21,6 +21,8 @@
   --content-margin-left-tablet: 20vw;
   --lab-title-padding-top: 2rem;
   --lab-description-padding-top: 1rem;
+
+  --robot-width: 45rem;
 }
 
 body {
@@ -104,13 +106,12 @@ body {
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-/* Робот слева */
 .robot-left {
   position: fixed;
   left: 0;
   top: var(--content-margin-top);
   bottom: 0;
-  width: 30vw;
+  width: var(--robot-width);
   background-image: url('../img/robot.png');
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -134,7 +135,7 @@ body {
 
 }
 
-/* Старый стиль для обратной совместимости */
+/* Старый стиль для обратной совместимости
 .content-right {
   margin-left: var(--content-margin-left-desktop);
   padding-top: var(--content-padding-top);
@@ -158,11 +159,21 @@ body {
 
 /* ===== АДАПТИВНОСТЬ ===== */
 
+@media (min-width: 992px){
+  .content-column{
+    margin-left: 30rem;
+    max-width: 65%;
+  }
+}
+
 @media (min-width: 850px) {
   .navbar {
     padding-top: var(--navbar-padding-vertical) !important;
     padding-bottom: var(--navbar-padding-vertical) !important;
   }
+    .robot-left {
+        width: 40vw;
+    }
 }
 
 @media (max-width: 850px) {
