@@ -106,23 +106,21 @@ body {
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-.robot-left {
+.robot-left{
   position: fixed;
+  top: var(--navbar-total-height);          /* начинается под навигацией */
   left: 0;
-  top: var(--content-margin-top);
-  bottom: 0;
-  width: var(--robot-width);
-  background-image: url('../img/robot.png');
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: left center;
-  z-index: 0;
+  height: calc(100vh - var(--navbar-total-height));
+  background: url('../img/robot.png') no-repeat left center / cover;
+
+  /* ширина: минимум 340 px, максимум 35 vw, но не более 480 px */
+  width: clamp(400px, 45vw, 700px);
+
+  z-index: 0;                               /* навбар поверх, контент тоже */
 }
 
-/* Колонка с роботом */
-.robot-column {
-  position: relative;
-  height: 100%;
+@media (max-width: 991.98px){   /* < lg — скрываем */
+  .robot-left{ display:none; }
 }
 
 
@@ -135,16 +133,7 @@ body {
 
 }
 
-/* Старый стиль для обратной совместимости
-.content-right {
-  margin-left: var(--content-margin-left-desktop);
-  padding-top: var(--content-padding-top);
-  min-height: calc(100vh - var(--content-margin-top) - var(--content-padding-top));
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
+
 
 /* Заголовки */
 .lab-title {
@@ -159,11 +148,11 @@ body {
 
 /* ===== АДАПТИВНОСТЬ ===== */
 
-@media (min-width: 992px){
-  .content-column{
-    margin-left: 30rem;
-    max-width: 65%;
+@media (min-width: 992px){      /* lg */
+  .main-container{
+    padding-inline-start: 4vw;  /* «воздух» между роботом и текстом */
   }
+
 }
 
 @media (min-width: 850px) {
@@ -171,21 +160,12 @@ body {
     padding-top: var(--navbar-padding-vertical) !important;
     padding-bottom: var(--navbar-padding-vertical) !important;
   }
-    .robot-left {
-        width: 40vw;
-    }
+
 }
 
-@media (max-width: 850px) {
-  .robot-left {
-    width: 20vw;
-  }
-
-  .content-right {
-    margin-left: var(--content-margin-left-tablet);
-  }
+@media (max-width: 991.98px){
+  .robot-left{ display:none; }
 }
-
 @media (max-width: 790px) {
   :root {
     --navbar-height: 60px;
@@ -233,3 +213,6 @@ body {
     --navbar-height: 56px;
   }
 }
+
+
+

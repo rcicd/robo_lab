@@ -95,9 +95,7 @@
 top: var(--navbar-total-height);
 }
 
-#project-grid{
-  margin-top: 220px;    /* или сколько занимает #projects-top */
-}
+
 
 .project-card.hidden {
   transform: scale(0.9);

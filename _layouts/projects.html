@@ -6,6 +6,8 @@ layout: base
 
 <div class="projects-container">
   <div class="projects-inner-content">
+
+<div id="projects-top" class="sticky-top">
   <div class="row justify-content-center">
     <div class="projects-intro text-center">
       {{ content }}
@@ -29,7 +31,7 @@ layout: base
   {% endfor %}
 </div>
   </div>
-
+</div>
   <div class="row" id="project-grid">
     {% for project in site.projects %}
     <div class="col-12 col-lg-6 project-card" data-tags="{{ project.tags | join: ',' | downcase }}">
