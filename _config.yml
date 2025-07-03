@@ -1,5 +1,11 @@
-title: "NUP Robotic Lab"
-description: "Site for NUP Robotic Lab"
+title: "NUP Robotics Lab"
+description: "Site for NUP Robotics Lab"
 baseurl: "/robo_lab"
 url: "https://rcicd.github.io"
 
+markdown: kramdown
+theme: null
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/

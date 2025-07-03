@@ -1,0 +1,55 @@
+---
+layout: base
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/projects.css' | relative_url }}">
+
+<div class="projects-container">
+  <div class="projects-inner-content">
+  <div class="row justify-content-center">
+    <div class="projects-intro text-center">
+      {{ content }}
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4 mb-4">
+    <div class="col-12 text-center filter-buttons">
+  <button class="btn btn-primary active" data-tag="all">All</button>
+  {% assign all_tags_string = "" %}
+  {% for project in site.projects %}
+    {% for tag in project.tags %}
+      {% assign all_tags_string = all_tags_string | append: tag | append: "|||" %}
+    {% endfor %}
+  {% endfor %}
+  {% assign unique_tags = all_tags_string | split: "|||" | uniq | sort %}
+  {% for tag in unique_tags %}
+    {% if tag != "" %}
+      <button class="btn btn-primary" data-tag="{{ tag | downcase }}">{{ tag }}</button>
+    {% endif %}
+  {% endfor %}
+</div>
+  </div>
+
+  <div class="row" id="project-grid">
+    {% for project in site.projects %}
+    <div class="col-12 col-lg-6 project-card" data-tags="{{ project.tags | join: ',' | downcase }}">
+      <div class="card h-100">
+        <img src="{{ site.baseurl }}{{ project.image }}" class="card-img-top" alt="{{ project.name }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ project.name }}</h5>
+          <div class="tags-container mb-2">
+            {% for tag in project.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <p class="card-text flex-grow-1">{{ project.description }}</p>
+          <a href="{{ project.url | relative_url }}" class="btn btn-outline-light mt-auto">More details</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+    </div>
+</div>
+
+<script src="{{ '/assets/js/project-filter.js' | relative_url }}"></script>
