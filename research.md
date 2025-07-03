@@ -11,7 +11,10 @@ fields_of_interest:
   - "Artificial Intelligence"
 
 publications:
-  in_progress: []
+  in_progress: 
+    - authors: "Ilia Nechaev, Michael Georgiades, Kirill Krinkin"
+      name: 'Efficient Lane Marking Recognition for Duckietown for Varying Lighting Conditions'
+      #doi: "doi"
 #  template to add in "in_progress":
 #  - authors: "Author1, Author2"
 #    name: "Name of the work"

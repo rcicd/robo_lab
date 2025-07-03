@@ -10,7 +10,7 @@ team_members:
     description: "tbd"
   - name: "Ilia Nechaev"
     image: "/assets/img/team/IliaNechaev.jpg"
-    description: "tbd"
+    description: "Research and educational assistant. <a href='https://github.com/SPGC'>GitHub</a>"
   - name: "Vladimir Shtarev"
     image: "/assets/img/team/VladimirShtarev.jpg"
     description: "tbd"
