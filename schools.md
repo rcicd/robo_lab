@@ -4,6 +4,6 @@ title: "Schools"
 permalink: /schools/
 ---
 
-# Our Schools
+# Learn with us
 
-Here you can view our current and past schools. Use the filters to find topics that interest you.
+We believe that knowledge should be accessible to everyone. Here you will find information about all our educational projects: from university courses and open lectures to practical master classes and online programs.

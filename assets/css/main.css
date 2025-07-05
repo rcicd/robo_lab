@@ -26,6 +26,47 @@ body {
   color: white;
 }
 
+/* Automatic Bootstrap-like styles for lists in content */
+.project-content ul,
+.project-content ol {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem; /* Rounded corners */
+  background-color: #212529; /* Dark background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden; /* Ensures corners are rounded correctly */
+}
+
+.project-content li {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+}
+
+.project-content li:last-child {
+  border-bottom: none;
+}
+
+/* Special styles for ordered lists to keep numbering */
+.project-content ol {
+    counter-reset: list-item;
+}
+
+.project-content ol > li {
+    counter-increment: list-item;
+}
+
+.project-content ol > li::before {
+    content: counter(list-item) ". ";
+    font-weight: bold;
+    color: var(--primary-color); /* Use the site's primary color for numbers */
+    margin-right: 0.5em;
+}
+
 /* ===== НАВИГАЦИЯ (без изменений) ===== */
 .navbar { background-color: black; background-size: cover; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; position: fixed; top: 0; width: 100%; z-index: 1000; min-height: var(--navbar-height); }
 .navbar-brand { font-family: 'New Tegomin', serif; font-size: 2rem; color: lightgrey; }
@@ -117,15 +158,14 @@ body {
   animation: bobbing 3s infinite ease-in-out;
 }
 
-/* Стили для самого изображения внутри кнопки */
 #scrollTopBtn img {
-  width: 60px; /* Задайте нужный размер */
+  width: 90px;
   height: auto;
 }
 
 #scrollTopBtn:hover {
   opacity: 1;
-  transform: scale(1.1); /* Немного увеличиваем при наведении */
+  transform: scale(1.2);
 }
 
 /* Сама анимация покачивания */
@@ -153,9 +193,13 @@ body {
   }
 }
 
-/* Остальные медиа-запросы */
+
 @media (max-width: 790px) {
   .navbar-collapse { background-color: black; padding: 1rem 0; margin-top: 1rem; }
   .navbar-nav { text-align: center; }
   .nav-item { margin: 0.5rem 0; }
+      #scrollTopBtn img {
+      width: 60px;
+      height: auto;
+    }
 }
