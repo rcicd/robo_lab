@@ -35,7 +35,7 @@ body {
 .nav-link { color: lightgrey; }
 .navbar-nav .nav-link:hover { text-decoration: underline; color: var(--primary-color) !important; }
 .navbar-nav .nav-link.active { color: lightgrey !important; text-decoration: underline !important; }
-.nav-robot-arm { display: none; } /* Скрываем, т.к. были проблемы */
+
 
 
 /* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
@@ -58,6 +58,16 @@ body {
 /* ===== КОЛОНКА С КОНТЕНТОМ ===== */
 .main-content-area {
   width: 100%;
+}
+
+.hero-content-centered {
+  min-height: calc(80vh - var(--navbar-total-height));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* ===== ОБЩИЕ УНИВЕРСАЛЬНЫЕ КЛАССЫ ===== */

@@ -207,6 +207,18 @@
   color: var(--text-light);
 }
 
+.nav-robot-arm {
+  height: 100px;
+  width: auto;
+  margin-left: -88px;
+  vertical-align: top;
+  z-index: 1000;
+  position: absolute;
+  top: 2px;
+  /*right: 20rem;  <-- А эту добавили. Она задает отступ от правого края */
+  pointer-events: none;
+}
+
 @media (max-width: 1179px) {
   .fields-container {
     grid-template-columns: repeat(2, 1fr);
