@@ -7,9 +7,9 @@
   /* Отступы для контента */
   --content-margin-top: var(--navbar-total-height);
 
-  /* --- КЛЮЧЕВОЕ ИЗМЕНЕНИЕ --- */
+
   /* Задаем ширину колонки с роботом в одном месте */
-  --robot-column-width: clamp(400px, 35vw, 550px);
+  --robot-column-width: clamp(400px, 30vw, 800px);
 
   /* Остальные переменные */
   --primary-color: #6289a0;
