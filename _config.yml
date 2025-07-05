@@ -9,3 +9,6 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  schools:
+    output: true
+    permalink: /schools/:name/
