@@ -215,7 +215,6 @@
   z-index: 1000;
   position: absolute;
   top: 2px;
-  /*right: 20rem;  <-- А эту добавили. Она задает отступ от правого края */
   pointer-events: none;
 }
 
