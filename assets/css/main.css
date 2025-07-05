@@ -212,3 +212,12 @@ body {
       height: auto;
     }
 }
+
+a {
+  color: var(--primary-color);
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--text-light);
+}

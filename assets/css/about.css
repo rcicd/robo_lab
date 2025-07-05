@@ -1,71 +1,111 @@
-/* Стили для секций галереи */
 .team-section {
-  margin-top: 2rem;
-}
-
-.team-title {
-  font-size: 2.5rem;
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.scroll-container {
-  gap: 2rem; /* Расстояние между карточками */
-  justify-content: center; /* Центрирует элементы, если есть свободное место */
-}
-
-.card-img-top.img-contain {
-  object-fit: contain;
-  background-color: #ffffff;
-}
-
-/* Стилизация карточки команды. */
-/* Общие стили (фон, рамка, цвет текста) применяются через класс .custom-card из main.css */
-.team-card {
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  flex-shrink: 0;
-}
-
-.team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(100, 149, 237, 0.2);
+  padding-top: 2rem;
 }
 
 .team-card .card-img-top {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  object-position: top; /* Фокусируемся на верхней части изображения, что обычно хорошо для портретов */
+  object-position: top; /* Aligns image to the top for better cropping */
 }
 
-.team-card .card-title {
-  font-size: 1.25rem;
-  color: white;
+.team-card .card-img-top.img-contain {
+  object-fit: contain;
+  padding: 10px;
+  object-position: center; /* Return to center for contain style */
 }
 
-.team-card .card-text {
-  font-size: 0.9rem;
-  flex-grow: 1; /* Позволяет тексту занимать все доступное место */
+.scroll-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-
-/* Стилизация полосы прокрутки для Webkit (Chrome, Safari) */
 .scroll-container::-webkit-scrollbar {
-  height: 8px;
+  display: none;
 }
 
-.scroll-container::-webkit-scrollbar-track {
-  background: #222;
-  border-radius: 4px;
+.scroll-container:not(.is-scrollable) {
+  justify-content: center;
+}
+.scroll-container.is-scrollable {
+  justify-content: flex-start;
 }
 
-.scroll-container::-webkit-scrollbar-thumb {
+.scroll-wrapper {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; /* Закругленные углы вместо круга */
+
+  background-color: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(5px); /* Эффект размытия фона */
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: none; /* Скрыты по умолчанию */
+}
+
+.scroll-wrapper.is-scrollable .scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn:hover {
+  border-color: var(--primary-color);
   background-color: var(--primary-color);
-  border-radius: 4px;
 }
 
-.scroll-container::-webkit-scrollbar-thumb:hover {
-  background-color: #8ab4cc;
+.scroll-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(30, 30, 30, 0.7);
+}
+
+/* Style for disabled buttons */
+.scroll-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.6); /* Keep bg color */
+}
+
+.scroll-btn.prev {
+  left: -1.3rem;
+}
+
+.scroll-btn.next {
+  right: -1.3rem;
+}
+
+/* Стилизация текста внутри карточек */
+.team-card .card-body {
+  text-align: center;
+  color: var(--text-color); /* Используем переменную для белого цвета текста */
+}
+
+/* Отдельно стилизуем ссылки внутри карточек */
+.team-card .card-body a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.team-card .card-body a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
