@@ -7,7 +7,7 @@ permalink: /about/
 team_members:
   - name: "Kirill Krinkin"
     image: "/assets/img/team/KirillKrinkin.jpg" 
-    description: "Head of Lab" <a href='https://krinkin.com'>Homepage</a>"
+    description: "Head of Lab <a href='https://krinkin.com'>Homepage</a>"
   - name: "Ilia Nechaev"
     image: "/assets/img/team/IliaNechaev.jpg"
     description: "Research and educational assistant. <a href='https://github.com/SPGC'>GitHub</a>"
