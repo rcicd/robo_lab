@@ -14,19 +14,17 @@
   gap: 2rem; /* Расстояние между карточками */
   justify-content: center; /* Центрирует элементы, если есть свободное место */
 }
+
 .card-img-top.img-contain {
   object-fit: contain;
   background-color: #ffffff;
 }
 
-/* Стилизация карточки */
+/* Стилизация карточки команды. */
+/* Общие стили (фон, рамка, цвет текста) применяются через класс .custom-card из main.css */
 .team-card {
   display: flex;
   flex-direction: column;
-
-  background-color: #1a1a1a;
-  border: 1px solid var(--border-light);
-  color: var(--text-light);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   flex-shrink: 0;
 }

@@ -3,47 +3,40 @@
   --navbar-height: 70px;
   --navbar-padding-vertical: 1rem;
   --navbar-total-height: calc(var(--navbar-height) + var(--navbar-padding-vertical) * 2);
-  
+
   /* Отступы для контента */
-  --content-padding-top: 2rem;
   --content-margin-top: var(--navbar-total-height);
-  
+
+  /* --- КЛЮЧЕВОЕ ИЗМЕНЕНИЕ --- */
+  /* Задаем ширину колонки с роботом в одном месте */
+  --robot-column-width: clamp(400px, 35vw, 550px);
+
   /* Остальные переменные */
   --primary-color: #6289a0;
   --text-light: lightgrey;
   --bg-dark: black;
   --border-light: rgba(255, 255, 255, 0.1);
-  --navbar-collapse-padding: 1rem 0;
-  --navbar-collapse-margin-top: 1rem;
-  --nav-item-margin: 0.5rem 0;
   --content-padding: 1rem;
-  --content-margin-left-desktop: 30vw;
-  --content-margin-left-tablet: 20vw;
-  --lab-title-padding-top: 2rem;
-  --lab-description-padding-top: 1rem;
-
-  --robot-width: 45rem;
 }
 
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: black;
+  background-color: var(--bg-dark);
   color: white;
 }
 
-/* ===== НАВИГАЦИЯ ===== */
-.navbar {
-  background-color: black;
-  background-size: cover;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  min-height: var(--navbar-height);
-}
+/* ===== НАВИГАЦИЯ (без изменений) ===== */
+.navbar { background-color: black; background-size: cover; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; position: fixed; top: 0; width: 100%; z-index: 1000; min-height: var(--navbar-height); }
+.navbar-brand { font-family: 'New Tegomin', serif; font-size: 2rem; color: lightgrey; }
+.navbar-toggler { border: 1px solid lightgrey; background-color: transparent; }
+.navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='lightgrey' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+.navbar-toggler:focus { box-shadow: none; outline: 0; }
+.nav-link { color: lightgrey; }
+.navbar-nav .nav-link:hover { text-decoration: underline; color: var(--primary-color) !important; }
+.navbar-nav .nav-link.active { color: lightgrey !important; text-decoration: underline !important; }
+.nav-robot-arm { display: none; } /* Скрываем, т.к. были проблемы */
+
 
 /* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
 .main-container {
@@ -51,168 +44,56 @@ body {
   min-height: calc(100vh - var(--content-margin-top));
 }
 
-/* Логотип */
-.navbar-brand {
-  font-family: 'New Tegomin', serif;
-  font-size: 2rem;
-  color: lightgrey;
-}
-
-.navbar-brand:hover {
-  color: lightgrey;
-}
-
-/* Кнопка-тогглер для мобильного меню */
-.navbar-toggler {
-  border: 1px solid lightgrey;
-  background-color: transparent;
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='lightgrey' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-  outline: 0;
-}
-
-/* Ссылки навигации */
-.nav-link {
-  color: lightgrey;
-}
-
-.navbar-nav .nav-link:hover {
-  text-decoration: underline;
-  color: var(--primary-color) !important;
-}
-
-.navbar-nav .nav-link.active,
-.navbar .navbar-nav .nav-link.active {
-  color: lightgrey !important;
-  text-decoration: underline !important;
-}
-
-
-.nav-robot-arm {
-  height: 100px;
-  width: auto;
-  margin-left: -88px;
-  vertical-align: top;
-  z-index: 1000;
-  position: absolute;
-  top: 2px;
-  pointer-events: none;
-}
-
-/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+/* ===== ЛЕВЫЙ РОБОТ ===== */
 .robot-left{
   position: fixed;
-  top: var(--navbar-total-height);          /* начинается под навигацией */
+  top: var(--navbar-total-height);
   left: 0;
   height: calc(100vh - var(--navbar-total-height));
   background: url('../img/robot.png') no-repeat left center / cover;
-
-  /* ширина: минимум 340 px, максимум 35 vw, но не более 480 px */
-  width: clamp(400px, 45vw, 700px);
-
-  z-index: 0;                               /* навбар поверх, контент тоже */
+  width: var(--robot-column-width); /* Используем переменную */
+  z-index: 0;
 }
 
-@media (max-width: 991.98px){   /* < lg — скрываем */
-  .robot-left{ display:none; }
+/* ===== КОЛОНКА С КОНТЕНТОМ ===== */
+.main-content-area {
+  width: 100%;
 }
 
-
-.content-wrapper {
-  min-height: calc(100vh - var(--content-margin-top) - var(--navbar-total-height));
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-
+/* ===== ОБЩИЕ УНИВЕРСАЛЬНЫЕ КЛАССЫ ===== */
+.inner-content-box {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+.custom-card {
+  background-color: #1a1a1a;
+  border: 1px solid var(--border-light);
+  color: var(--text-light);
 }
 
-
-
-/* Заголовки */
-.lab-title {
-  font-size: 3rem;
-  padding-top: var(--lab-title-padding-top);
-}
-
-.lab-description {
-  font-size: 1.75rem;
-  padding-top: var(--lab-description-padding-top);
-}
 
 /* ===== АДАПТИВНОСТЬ ===== */
 
-@media (min-width: 992px){      /* lg */
-  .main-container{
-    padding-inline-start: 4vw;  /* «воздух» между роботом и текстом */
-  }
-
-}
-
-@media (min-width: 850px) {
-  .navbar {
-    padding-top: var(--navbar-padding-vertical) !important;
-    padding-bottom: var(--navbar-padding-vertical) !important;
-  }
-
-}
-
+/* Скрываем робота на экранах меньше lg (992px) */
 @media (max-width: 991.98px){
-  .robot-left{ display:none; }
+  .robot-left{ display: none; }
 }
+
+/* На больших экранах (когда робот видим) */
+@media (min-width: 992px){
+  .main-content-area {
+    /* Сдвигаем контент вправо на ширину робота */
+    margin-left: var(--robot-column-width);
+    /* Задаем ширину контента как 100% минус ширина робота */
+    width: calc(100% - var(--robot-column-width));
+  }
+}
+
+/* Остальные медиа-запросы */
 @media (max-width: 790px) {
-  :root {
-    --navbar-height: 60px;
-  }
-
-  .navbar-collapse {
-    background-color: black;
-    padding: var(--navbar-collapse-padding);
-    margin-top: var(--navbar-collapse-margin-top);
-  }
-
-  .navbar-nav {
-    text-align: center;
-  }
-
-  .nav-item {
-    margin: var(--nav-item-margin);
-  }
-
-  /* Основной контент */
-  .robot-left {
-    display: none;
-  }
-
-  .content-right {
-    margin-left: 0;
-    padding: var(--content-padding);
-  }
-
-  .lab-title {
-    font-size: 2rem;
-  }
-
-  .lab-description {
-    font-size: 1.5rem;
-  }
-
-  .nav-robot-arm {
-    display: none;
-  }
+  .navbar-collapse { background-color: black; padding: 1rem 0; margin-top: 1rem; }
+  .navbar-nav { text-align: center; }
+  .nav-item { margin: 0.5rem 0; }
 }
-
-@media (max-width: 480px) {
-  :root {
-    --navbar-height: 56px;
-  }
-}
-
-
-

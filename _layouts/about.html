@@ -17,8 +17,7 @@ layout: base
     <div class="scroll-container d-flex flex-nowrap overflow-auto py-3">
       {% for member in page.team_members %}
       <div class="col-10 col-sm-5 col-md-3 col-lg-2">
-
-        <div class="card team-card h-100">
+        <div class="card team-card h-100 custom-card">
           <img src="{{ site.baseurl }}{{ member.image }}" class="card-img-top" alt="{{ member.name }}">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ member.name }}</h5>
@@ -35,8 +34,7 @@ layout: base
     <div class="scroll-container d-flex flex-nowrap overflow-auto py-3">
       {% for robot in page.robo_team %}
       <div class="col-10 col-sm-5 col-md-3 col-lg-2">
-
-        <div class="card team-card h-100">
+        <div class="card team-card h-100 custom-card">
           <img src="{{ site.baseurl }}{{ robot.image }}" class="card-img-top {% if robot.fit_style == 'contain' %}img-contain{% endif %}" alt="{{ robot.name }}">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ robot.name }}</h5>
