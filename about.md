@@ -41,4 +41,4 @@ robo_team:
 
 # About Us
 
-We are ...
+We are a team of researchers and educators at Neapolis University Paphos, dedicated to advancing the field of robotics and artificial intelligence. 
