@@ -59,9 +59,6 @@
   margin: 0.2rem;
 }
 
-#schools-top {
-  top: var(--navbar-total-height);
-}
 
 .school-card.hidden {
   transform: scale(0.9);
