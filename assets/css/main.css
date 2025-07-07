@@ -107,7 +107,7 @@ body {
   left: 0;
   height: calc(100vh - var(--navbar-total-height));
   background: url('../img/robot.png') no-repeat left center / cover;
-  width: var(--robot-column-width); /* Используем переменную */
+  width: var(--robot-column-width);
   z-index: 0;
 }
 
@@ -251,12 +251,12 @@ a:hover {
   color: var(--text-light);
 }
 
-@media (max-aspect-ratio: 4/3) {
+
+
+@media (max-aspect-ratio: 1.6) {
   .robot-left {
-    display: none !important; /* Прячем робота */
+    display: none !important;
   }
-
-
   .main-content-area {
     margin-left: 0;
     width: 100%;

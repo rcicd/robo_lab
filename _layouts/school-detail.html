@@ -4,9 +4,9 @@ layout: base
 
 <link rel="stylesheet" href="{{ '/assets/css/projects.css' | relative_url }}">
 
-<div class="container my-5">
+<div class="container-fluid my-5">
   <div class="row justify-content-center">
-    <div class="col-lg-9">
+    <div class="col-lg-11">
 
       <h1 class="text-center mb-4">{{ page.name }}</h1>
 
@@ -15,9 +15,9 @@ layout: base
           <span class="tag">{{ tag }}</span>
         {% endfor %}
       </div>
-
+    <div class="text-center">
       <img src="{{ site.baseurl }}{{ page.image }}" class="img-fluid rounded mb-5" alt="{{ page.name }}">
-
+    </div>
       <div class="project-content">
         {{ content }}
       </div>
