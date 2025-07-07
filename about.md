@@ -19,7 +19,7 @@ team_members:
     
   - name: "Tatiana Berlenko"
     image: "/assets/img/team/TatianaBerlenko.JPG"
-    description: "tbd"
+    description: "Teacher and PhD student."
     
   - name: "Ivan Voevodskiy"
     image: "/assets/img/team/IvanVoevodskiy.jpg"
@@ -30,12 +30,12 @@ team_members:
 robo_team:
   - name: "Hexa"
     image: "/assets/img/robots/hexa.jpg" 
-    description: "tbd"
+    description: "<a href='https://drive.google.com/file/d/1LAdIaTp4lo3-y2AYvNmJ0rKLRDqJm5Ft/view?usp=sharing'>Hexa user manual</a>"
     fit_style: "contain"
     
   - name: "Nao"
     image: "/assets/img/robots/nao.png"
-    description: "tbd <a href='https://us.softbankrobotics.com/nao'>Nao site</a>"
+    description: "<a href='https://us.softbankrobotics.com/nao'>Nao site</a>"
     fit_style: "contain"
     
   - name: "DuckieBot"
