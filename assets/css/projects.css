@@ -29,11 +29,13 @@
 }
 
 .project-card {
-  padding: 1rem;
+  padding: 4rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  width: clamp(600px, 23vw, 1100px);
 }
 
 .project-card .card { /* specific styles */
+
 }
 
 .project-card .card-img-top {
@@ -64,4 +66,27 @@
   transform: scale(0.9);
   opacity: 0;
   display: none;
+}
+
+/* Дополнительные стили для больших экранов */
+@media (min-width: 1920px) {
+  .project-card {
+    padding: 2rem; /* Увеличиваем отступ для экранов от 1920px */
+    flex: 0 0 33.333%; /* 3 карточки в ряд */
+    max-width: 33.333%;
+  }
+}
+
+@media (min-width: 3840px) {
+  .project-card {
+    padding: 4rem; /* Увеличиваем отступ для экранов от 3840px */
+    flex: 0 0 25%; /* 4 карточки в ряд */
+    max-width: 25%;
+  }
+}
+
+/* Обертка для карточек, чтобы они корректно переносились */
+#project-grid {
+  display: flex;
+  flex-wrap: wrap;
 }

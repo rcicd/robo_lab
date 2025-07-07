@@ -27,10 +27,12 @@ robo_team:
   - name: "Hexa"
     image: "/assets/img/robots/hexa.jpg" 
     description: "tbd"
+    fit_style: "contain"
     
   - name: "Nao"
     image: "/assets/img/robots/nao.png"
     description: "tbd <a href='https://us.softbankrobotics.com/nao'>Nao site</a>"
+    fit_style: "contain"
     
   - name: "DuckieBot"
     image: "/assets/img/robots/duckiebot.png"
