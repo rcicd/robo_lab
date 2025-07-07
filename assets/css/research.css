@@ -76,7 +76,7 @@
   gap: var(--field-tag-gap);
   justify-items: center;
   max-width: 1200px;
-  margin: 0;
+  margin: 0 100px;
 }
 
 /* Смещение для создания кирпичного эффекта с 3 колонками */

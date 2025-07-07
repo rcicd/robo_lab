@@ -26,6 +26,7 @@ body {
   color: white;
 }
 
+
 .project-content h1,
 .project-content h2,
 .project-content h3,
@@ -94,6 +95,7 @@ body {
 
 /* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
 .main-container {
+  font-size: clamp(1rem, 0.8rem + 0.5vw, 1.5rem);
   padding-top: var(--content-margin-top);
   min-height: calc(100vh - var(--content-margin-top));
 }
@@ -197,9 +199,7 @@ body {
 }
 
 @media (min-width: 3840px) {
-  html {
-    font-size: 155%;
-  }
+
 
   /* Увеличиваем вертикальные отступы для заголовков */
   h1, .project-content h1, .schools-intro h1 {
@@ -249,4 +249,16 @@ a {
 
 a:hover {
   color: var(--text-light);
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .robot-left {
+    display: none !important; /* Прячем робота */
+  }
+
+
+  .main-content-area {
+    margin-left: 0;
+    width: 100%;
+  }
 }
