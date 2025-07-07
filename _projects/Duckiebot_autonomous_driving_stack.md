@@ -4,9 +4,9 @@ name: "Duckiebot autonomous driving stack student's project"
 image: "/assets/img/schools/duckiebot_autonomous_driving_stack.jpg" 
 description: "Developing an autonomous driving stack for Duckiebot hardware platform using ROS2."
 tags:
-    - "Project"
     - "Robotics"
-    - "Offline"
+    - "Finished"
+    - "Software"
 
 ---
 ## Project description 
@@ -38,4 +38,4 @@ and quite often a situation arises where a program that was just working perfect
 The students coped perfectly with all the challenges.
 As a result student got an application that can do each of the target 
 actions and combine all of this in one ROS2 node, that sequentially calls the rest nodes. 
-You can see <a href="https://github.com/DuckiebotNup2025SpringProject/Driving">project repository</a>.
+<a href="https://github.com/DuckiebotNup2025SpringProject/Driving">Here</a> you can see a project repository.
