@@ -20,6 +20,10 @@ team_members:
   - name: "Tatiana Berlenko"
     image: "/assets/img/team/TatianaBerlenko.JPG"
     description: "tbd"
+    
+  - name: "Ivan Voevodskiy"
+    image: "/assets/img/team/IvanVoevodskiy.jpg"
+    description: "tbd"
 
 
 
