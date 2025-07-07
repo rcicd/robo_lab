@@ -23,7 +23,7 @@ team_members:
     
   - name: "Ivan Voevodskiy"
     image: "/assets/img/team/IvanVoevodskiy.jpg"
-    description: "tbd"
+    description: "NUP student. Intern. <a href='https://github.com/Liberalizm'>GitHub</a>"
 
 
 
