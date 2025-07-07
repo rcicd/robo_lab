@@ -1,7 +1,7 @@
 ---
-layout: school-detail
+layout: project-detail
 name: "Duckiebot autonomous driving stack student's project"
-image: "/assets/img/schools/duckiebot_autonomous_driving_stack.jpg" 
+image: "/assets/img/projects/duckiebot_autonomous_driving_stack.jpg" 
 description: "Developing an autonomous driving stack for Duckiebot hardware platform using ROS2."
 tags:
     - "Robotics"
