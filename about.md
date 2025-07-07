@@ -21,6 +21,9 @@ team_members:
     image: "/assets/img/team/TatianaBerlenko.JPG"
     description: "tbd"
 
+  - name: "Mikhail Maliugin"
+    image: "/assets/img/team/MikhailMaliugin.jpg"
+    description: "meow meow"
 
 
 robo_team:
