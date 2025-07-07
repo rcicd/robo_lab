@@ -8,6 +8,10 @@ team_members:
   - name: "Kirill Krinkin"
     image: "/assets/img/team/KirillKrinkin.jpg" 
     description: "Head of Lab <br><a href='https://krinkin.com'>Homepage</a>"
+
+  - name: "Tatiana Berlenko"
+    image: "/assets/img/team/TatianaBerlenko.JPG"
+    description: "Teacher and PhD student."
     
   - name: "Ilia Nechaev"
     image: "/assets/img/team/IliaNechaev.jpg"
@@ -16,11 +20,7 @@ team_members:
   - name: "Vladimir Shtarev"
     image: "/assets/img/team/VladimirShtarev.jpg"
     description: "tbd"
-    
-  - name: "Tatiana Berlenko"
-    image: "/assets/img/team/TatianaBerlenko.JPG"
-    description: "Teacher and PhD student."
-    
+       
   - name: "Ivan Voevodskiy"
     image: "/assets/img/team/IvanVoevodskiy.jpg"
     description: "NUP student. Intern. <a href='https://github.com/Liberalizm'>GitHub</a>"
