@@ -11,19 +11,19 @@ team_members:
 
   - name: "Tatiana Berlenko"
     image: "/assets/img/team/TatianaBerlenko.JPG"
-    description: "Teacher and PhD student."
+    description: "Teacher and PhD student. <br><a href='https://github.com/TatyanaBerlenko'>GitHub</a>"
     
   - name: "Ilia Nechaev"
     image: "/assets/img/team/IliaNechaev.jpg"
-    description: "Research and educational assistant. <a href='https://github.com/SPGC'>GitHub</a>"
+    description: "Research and educational assistant. <br><a href='https://github.com/SPGC'>GitHub</a>"
     
   - name: "Vladimir Shtarev"
     image: "/assets/img/team/VladimirShtarev.jpg"
-    description: "tbd"
+    description: "NUP student. Intern."
        
   - name: "Ivan Voevodskiy"
     image: "/assets/img/team/IvanVoevodskiy.jpg"
-    description: "NUP student. Intern. <a href='https://github.com/Liberalizm'>GitHub</a>"
+    description: "NUP student. Intern. <br><a href='https://github.com/Liberalizm'>GitHub</a>"
 
 
 
