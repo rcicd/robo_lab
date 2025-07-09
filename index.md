@@ -5,5 +5,7 @@ title: Home
 
 # SMART CITYLAB CYPRUS
 
-We are a team of researchers working on robotics.
+We are a part of <a href="https://lp.jetbrains.com/academy/csai-program/">Computer Science and Artificial Intelligence Bachelor's Degree</a> in <a href="https://www.nup.ac.cy/">NUP</a> with support of JetBrains.
+<br>Our mission is to provide high-quality, modern education in cutting-edge technologies through collaborative problem-solving. Join our projects and schools and get new skills and experience with us.
+
 

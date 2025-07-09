@@ -27,7 +27,7 @@ team_members:
 
   - name: "Mikhail Maliugin"
     image: "/assets/img/team/MikhailMaliugin.jpg"
-    description: "NUP student. Intern. Rust enjoyer <a href='https://github.com/miko089'>GitHub</a>"
+    description: "NUP student. Intern. Rust enjoyer <br><a href='https://github.com/miko089'>GitHub</a>"
 
 
 robo_team:

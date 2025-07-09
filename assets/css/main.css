@@ -16,6 +16,7 @@
   --text-light: lightgrey;
   --bg-dark: black;
   --border-light: rgba(255, 255, 255, 0.1);
+  --border-footer: rgba(255, 255, 255, 0.4);
   --content-padding: 1rem;
 }
 
@@ -138,6 +139,17 @@ body {
   border: 1px solid var(--border-light);
   color: var(--text-light);
 }
+#smart-citylab-cyprus{
+margin-bottom: 2rem;
+}
+
+.hero-content-centered{
+    width: 70%;
+     margin: 0 auto;
+
+     line-height: 1.6;
+}
+
 /* ===== Кнопка "Наверх" ===== */
 #scrollTopBtn {
   display: none; /* Скрыта по умолчанию */
@@ -223,10 +235,8 @@ body {
 
 }
 @media (min-width: 992px){
-  .main-content-area {
-    /* Сдвигаем контент вправо на ширину робота */
+  .main-content-area, .site-footer{
     margin-left: var(--robot-column-width);
-    /* Задаем ширину контента как 100% минус ширина робота */
     width: calc(100% - var(--robot-column-width));
   }
 }
@@ -260,5 +270,53 @@ a:hover {
   .main-content-area {
     margin-left: 0;
     width: 100%;
+  }
+}
+
+.site-footer {
+  border-top: 1px solid var(--border-light);
+position: fixed;
+  left: 0;             /* Прижимаем к левому краю */
+  bottom: 0;           /* Прижимаем к нижнему краю */
+  width: 100%;
+  color: var(--text-light);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border-footer);
+  text-align: center;
+}
+
+.site-footer h4 {
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.site-footer p {
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.social-icon {
+  width: 40px;
+  height: auto;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 767.98px) {
+  .site-footer {
+    text-align: center; /* Центрируем все на мобильных */
   }
 }

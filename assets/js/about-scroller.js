@@ -41,12 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     nextBtn.addEventListener('click', () => {
-      const scrollDistance = getScrollAmount() + parseFloat(getComputedStyle(container).gap);
+      const scrollDistance = getScrollAmount()* 2 + parseFloat(getComputedStyle(container).gap) ;
       container.scrollLeft += scrollDistance;
     });
 
     prevBtn.addEventListener('click', () => {
-        const scrollDistance = getScrollAmount() + parseFloat(getComputedStyle(container).gap);
+        const scrollDistance = getScrollAmount()* 2 + parseFloat(getComputedStyle(container).gap) ;
       container.scrollLeft -= scrollDistance;
     });
 
