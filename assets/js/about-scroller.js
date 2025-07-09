@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (firstCard) {
         return firstCard.offsetWidth;
       }
-      return 400;
+      return 600;
     };
 
     nextBtn.addEventListener('click', () => {
