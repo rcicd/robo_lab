@@ -99,6 +99,7 @@ body {
   font-size: clamp(1rem, 0.8rem + 0.5vw, 1.5rem);
   padding-top: var(--content-margin-top);
   min-height: calc(100vh - var(--content-margin-top));
+
 }
 
 /* ===== ЛЕВЫЙ РОБОТ ===== */
@@ -275,12 +276,12 @@ a:hover {
 
 .site-footer {
   border-top: 1px solid var(--border-light);
-position: fixed;
+display: flex;
   left: 0;             /* Прижимаем к левому краю */
   bottom: 0;           /* Прижимаем к нижнему краю */
   width: 100%;
   color: var(--text-light);
-  padding: 2.5rem 0;
+  padding: 1rem 0;
   border-top: 1px solid var(--border-footer);
   text-align: center;
 }
@@ -306,7 +307,7 @@ position: fixed;
 }
 
 .social-icon {
-  width: 40px;
+  width: 35px;
   height: auto;
   transition: opacity 0.2s ease-in-out;
 }
@@ -317,6 +318,6 @@ position: fixed;
 
 @media (max-width: 767.98px) {
   .site-footer {
-    text-align: center; /* Центрируем все на мобильных */
+    text-align: center;
   }
 }
