@@ -18,6 +18,7 @@
   --border-light: rgba(255, 255, 255, 0.1);
   --border-footer: rgba(255, 255, 255, 0.4);
   --content-padding: 1rem;
+  --footer-height:clamp(60px, 12vw, 100px);
 }
 
 body {
@@ -26,7 +27,15 @@ body {
   background-color: var(--bg-dark);
   color: white;
 }
+html {
+  height: 100%;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
 
 .project-content h1,
 .project-content h2,
@@ -98,8 +107,9 @@ body {
 .main-container {
   font-size: clamp(1rem, 0.8rem + 0.5vw, 1.5rem);
   padding-top: var(--content-margin-top);
-  min-height: calc(100vh - var(--content-margin-top));
-
+  /*padding-bottom: var(--footer-height);
+  min-height: calc(100vh - var(--content-margin-top)-var(--footer-height));*/
+flex: 1 0 auto;
 }
 
 /* ===== ЛЕВЫЙ РОБОТ ===== */
@@ -276,14 +286,14 @@ a:hover {
 
 .site-footer {
   border-top: 1px solid var(--border-light);
-display: flex;
-  left: 0;             /* Прижимаем к левому краю */
-  bottom: 0;           /* Прижимаем к нижнему краю */
-  width: 100%;
+  display: flex;
+  left: 0;
+  bottom: 0;
   color: var(--text-light);
   padding: 1rem 0;
   border-top: 1px solid var(--border-footer);
   text-align: center;
+  flex-shrink: 0;
 }
 
 .site-footer h4 {
