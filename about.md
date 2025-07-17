@@ -43,7 +43,7 @@ robo_team:
     
   - name: "DuckieBot"
     image: "/assets/img/robots/duckiebot.png"
-    description: "tbd <a href='https://duckietown.com/platform/'>Duckietown site</a>"
+    description: "<a href='https://duckietown.com/platform/'>Duckietown site</a>"
     fit_style: "contain"
   
 ---
