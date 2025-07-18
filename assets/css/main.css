@@ -331,3 +331,28 @@ a:hover {
     text-align: center;
   }
 }
+.navbar-brand {
+  position: relative; /* <-- Вот эта важная строка, которой не хватало! */
+}
+.nav-brand-img {
+  height: 100px;
+  width: auto;
+  position: absolute;  /* Позиционируем относительно "якоря" .navbar-brand */
+
+  /* Эти значения размещают его сверху и справа. Можете их поменять, чтобы подвинуть картинку. */
+  top: -20px;
+  right: -85px;
+
+  pointer-events: none; /* Чтобы картинка не мешала нажимать на ссылку */
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover .nav-brand-img {
+  transform: rotate(-25deg) translateY(-10px) scale(1.1);
+}
+
+@media (max-width: 840px) {
+  .nav-brand-img {
+    display: none;
+  }
+}

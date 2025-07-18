@@ -1,6 +1,11 @@
 <nav class="navbar navbar-expand-md p-3">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <a class="navbar-brand fw-bold" href="{{ site.baseurl }}/">{{ site.title }}
+<!--      {% if page.url contains '/blog' %}-->
+<!--      <img src="{{ site.baseurl }}/assets/img/star_wars.png"  class="nav-brand-img">-->
+<!--      {% endif %}-->
+
+    </a>
 
 
 
@@ -21,6 +26,8 @@
         <li class="nav-item">
           <a class="nav-link {% if page.url contains 'about' %}active{% endif %}" href="{{ site.baseurl }}/about">Team</a>
         </li>
+        <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/blog">Blog</a></li>
+
       </ul>
     </div>
   </div>

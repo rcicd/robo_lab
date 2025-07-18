@@ -12,3 +12,6 @@ collections:
   schools:
     output: true
     permalink: /schools/:name/
+  blog:
+    output: true
+    permalink: /blog/:name/
