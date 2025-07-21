@@ -68,7 +68,7 @@ Server address: [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 Open your web browser and navigate to the displayed address (e.g., http://127.0.0.1:4000/). You should now see the "NUP Robotics Lab" website running locally.
 
 
-## Adding a New Project
+## Adding a New Project, School, or Blog Post
 
 1. Create a new Markdown file (.md) inside the ```_projects/``` directory.
 2. The filename should be descriptive of the project (e.g., new_awesome_project.md). 
@@ -88,7 +88,7 @@ tags:
 
 5. Save the file. The new project will automatically be included in the projects list on the website.
 
-_You can add a new school or a new blog post in the same way. Use ```_schools/``` or ```_blog``` directory respectively._
+_You can add a new school or a new blog post in the same way. Use ```_schools/``` or ```_blog/``` directory respectively._
 
 ### Adding a New Team Member
 
