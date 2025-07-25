@@ -4,8 +4,8 @@ name: "How Robots Learn Not to Fall: A Simple Introduction to Robot Control"
 image: "/blog/robot-control.png"
 description: "This is the first post on our new blog. We are excited to share our journey with you."
 tags:
-    - "News"
-    - "General"
+    - "Easy learning"
+    - "Robot control"
 ---
 
 Imagine you're riding a bicycle trying to maintain balance. Your brain constantly analyzes which way you're leaning and corrects your hand and body movements. Robot control works similarly — except instead of your brain, mathematical algorithms do the job.
@@ -38,9 +38,9 @@ There are two fundamentally different control approaches:
 
 The most popular control algorithm is called a **PID controller**. It works like an experienced driver:
 
-- **P (Proportional)** — the bigger the error, the stronger the correction
-- **I (Integral)** — accounts for accumulated past errors
-- **D (Derivative)** — predicts future errors based on rate of change
+ - **P (Proportional)**:   the bigger the error, the stronger the correction
+- **I (Integral)**: accounts for accumulated past errors
+- **D (Derivative)**: predicts future errors based on rate of change
 
 Imagine you're parking: if you're far from the curb (big error), you approach quickly. If you're close, you move slowly and carefully. If you consistently undershoot, you account for that next time.
 
