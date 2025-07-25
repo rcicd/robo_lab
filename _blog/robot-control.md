@@ -1,7 +1,7 @@
 ---
 layout: blog-detail
 name: "How Robots Learn Not to Fall: A Simple Introduction to Robot Control"
-image: "/blog/robot-control.png"
+image: "/assets/blog/robot-control.png"
 description: "This is the first post on our new blog. We are excited to share our journey with you."
 tags:
     - "Easy learning"
@@ -59,6 +59,6 @@ The lecture includes a link to an interactive PID controller simulator. Try adju
 
 **Want to dive deeper into the theory and see more examples?**
 
-👉 [Check out the full lecture slides](/blog/introduction-to-robot-control.pdf) — complete with mathematical formulas, diagrams, and even QR codes with additional materials!
+👉 [Check out the full lecture slides](/assets/blog/introduction-to-robot-control.pdf) — complete with mathematical formulas, diagrams, and even QR codes with additional materials!
 
 *P.S. We always say: "The real world is real" — and that's exactly why robot control is such a fascinating and challenging problem.*
