@@ -1,0 +1,195 @@
+/* Error Submission Menu Styles */
+
+/* Overlay */
+.error-submission-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.error-submission-overlay.active {
+  display: flex;
+}
+
+.error-submission-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Container */
+.error-submission-container {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  background-color: #4C4C4C;
+  border: 2px solid #2C2C2C;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 2.5rem;
+  color: var(--text-light);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.error-submission-overlay.visible .error-submission-container {
+  transform: scale(1);
+}
+
+/* Header */
+.error-submission-header {
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Close button */
+.error-submission-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.error-submission-close:hover {
+  color: white;
+}
+
+/* Form */
+.error-submission-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Form groups */
+.error-submission-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.error-submission-group label {
+  font-weight: bold;
+  color: white;
+}
+
+/* Required star */
+.required-star {
+  color: red;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+/* Select dropdown */
+.error-submission-group select {
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid var(--border-light);
+  background-color: #1a1a1a;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.error-submission-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Textarea */
+.error-submission-group textarea {
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 2px solid #2C2C2C;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.error-submission-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Submit button */
+.error-submission-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  border: 2px solid #1a1a1a;
+  background-color: var(--primary-color);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: center;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.error-submission-button:hover {
+  background-color: #7599b0; /* Slightly lighter than primary color */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border-color: #2C2C2C;
+}
+
+.error-submission-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Button will use inline style for background-color based on field status */
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .error-submission-container {
+    padding: 1.5rem;
+    border-width: 1px;
+  }
+  
+  .error-submission-form {
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  
+  .error-submission-group {
+    padding: 0.75rem;
+  }
+  
+  .error-submission-group textarea {
+    min-height: 100px;
+  }
+  
+  .error-submission-close {
+    width: 25px;
+    height: 25px;
+    font-size: 1.2rem;
+  }
+}
