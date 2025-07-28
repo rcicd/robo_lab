@@ -35,7 +35,7 @@ layout: base
       <div class="col-12 col-lg-6 blog-card" data-tags="{{ post.tags | join: ',' | downcase }}">
       <div class="card h-100 custom-card">
         {% if post.image %}
-        <a href="{{ post.url | relative_url }}"><img src="{{ site.baseurl }}{{ post.image }}" class="card-img-top" alt="{{ post.name }}"></a>
+        <a href="{{ post.url | relative_url }}" title="Read {{ post.name }}" aria-label="Read blog post: {{ post.name }}"><img src="{{ site.baseurl }}{{ post.image }}" class="card-img-top" alt="{{ post.name }}"></a>
         {% endif %}
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{ post.name }}</h5>
