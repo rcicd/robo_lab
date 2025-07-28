@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Show a success message
-    alert('Thank you for your report! We will look into this issue.');
+    // alert('Thank you for your report! We will look into this issue.');
     
     // Reset the form and close the menu
     form.reset();
@@ -185,4 +185,23 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Expose the show function to the global scope so it can be called from a button
   window.showErrorSubmissionMenu = showErrorSubmissionMenu;
+  
+  // Handle the error report button animation
+  const errorBtn = document.getElementById('errorReportBtn');
+  if (errorBtn) {
+    // Check if the animation has already been played in this session
+    if (!sessionStorage.getItem('errorBtnAnimationPlayed')) {
+      // Wait a bit before showing the button
+      setTimeout(function() {
+        errorBtn.style.opacity = '1';
+        errorBtn.style.transform = 'translateY(0)';
+        // Mark that the animation has been played
+        sessionStorage.setItem('errorBtnAnimationPlayed', 'true');
+      }, 1000);
+    } else {
+      // If animation already played, just show the button without animation
+      errorBtn.style.opacity = '1';
+      errorBtn.style.transform = 'translateY(0)';
+    }
+  }
 });
