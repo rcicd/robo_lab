@@ -10,6 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/'/g, '&#039;');
   };
   
+  // Function to get API key based on environment
+  const getApiKey = () => {
+    // In a production environment, you might want to use a more secure approach
+    // This is a simplified example for demonstration purposes
+    
+    // For a real application, consider:
+    // 1. Using environment variables with a build process
+    // 2. Fetching from a secure configuration endpoint (with proper authentication)
+    // 3. Using a secure vault or key management service
+    
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      // Development API key - should be replaced with your actual development key
+      return 'secure-api-key-change-in-production';
+    } else {
+      // Production API key - should be securely managed
+      // IMPORTANT: Replace this with your actual production API key before deployment
+      // DO NOT commit the actual API key to version control
+      return 'your-production-api-key';
+    }
+  };
+  
   // Create the error submission menu elements
   const createErrorSubmissionMenu = () => {
     // Create the overlay
@@ -178,11 +199,30 @@ document.addEventListener('DOMContentLoaded', () => {
       // Validate input
       if (!title || !body) {
         console.error('Title and body are required');
-        return false;
+        return { 
+          success: false, 
+          message: 'Title and body are required' 
+        };
+      }
+      
+      // Additional validation to match server-side requirements
+      if (title.length < 3 || title.length > 256) {
+        console.error('Title must be between 3 and 256 characters');
+        return { success: false, message: 'Title must be between 3 and 256 characters' };
+      }
+      
+      if (body.length < 10) {
+        console.error('Description must be at least 10 characters');
+        return { success: false, message: 'Description must be at least 10 characters' };
       }
 
       // Get CSRF token from meta tag (should be added to your HTML)
       const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+      
+      // Get API key from configuration
+      // In a real application, this would be securely stored and retrieved
+      // For development purposes, we're using a constant value
+      const API_KEY = getApiKey();
       
       // Determine backend URL based on environment
       let backendUrl;
@@ -190,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backendUrl = 'http://localhost:3000/api/create-issue';
       } else {
         // Use relative URL in production to avoid hardcoding domains
+        // This assumes the API is hosted on the same domain or properly configured for CORS
         backendUrl = '/api/create-issue';
       }
 
@@ -199,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: {
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest', // Helps prevent CSRF
+          'x-api-key': API_KEY, // Add API key for authentication
           ...(csrfToken && { 'X-CSRF-Token': csrfToken }), // Add CSRF token if available
         },
         credentials: 'same-origin', // Include cookies for session authentication
@@ -208,9 +250,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }),
       });
 
-      // Check if response is ok
+      // Handle different response status codes
       if (!response.ok) {
-        throw new Error(`Server responded with status: ${response.status}`);
+        const errorData = await response.json().catch(() => ({}));
+        
+        // Handle specific status codes
+        switch (response.status) {
+          case 401:
+            throw new Error('Authentication failed. Please check your API key.');
+          case 429:
+            throw new Error('Too many requests. Please try again later.');
+          case 400:
+            throw new Error(`Validation error: ${errorData.message || 'Invalid input'}`);
+          case 404:
+            throw new Error('API endpoint not found. Please check the server configuration.');
+          case 500:
+          case 502:
+          case 503:
+          case 504:
+            throw new Error('Server error. Please try again later.');
+          default:
+            throw new Error(`Server responded with status: ${response.status}. ${errorData.message || ''}`);
+        }
       }
 
       // Parse the response
@@ -225,22 +286,64 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Return the success status
-      return data.success;
+      // Return the success status and additional data
+      return {
+        success: data.success,
+        message: data.message,
+        issueUrl: data.issueUrl
+      };
     } catch (error) {
       // Log error (only in development)
       if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         console.error('Error creating issue:', error.message);
       }
       
-      // In production, show a generic error message to the user
-      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-        alert('There was an error submitting your report. Please try again later.');
-      }
-      
-      return false;
+      // Return structured error response
+      return {
+        success: false,
+        message: error.message || 'There was an error submitting your report. Please try again later.'
+      };
     }
   }
+
+  // Create a feedback message element
+  const createFeedbackMessage = (message, isError = false) => {
+    const feedbackElement = document.createElement('div');
+    feedbackElement.className = `error-submission-feedback ${isError ? 'error' : 'success'}`;
+    feedbackElement.textContent = message;
+    feedbackElement.style.padding = '10px';
+    feedbackElement.style.marginBottom = '15px';
+    feedbackElement.style.borderRadius = '4px';
+    feedbackElement.style.backgroundColor = isError ? '#ffebee' : '#e8f5e9';
+    feedbackElement.style.color = isError ? '#c62828' : '#2e7d32';
+    feedbackElement.style.border = `1px solid ${isError ? '#ef9a9a' : '#a5d6a7'}`;
+    
+    return feedbackElement;
+  };
+  
+  // Function to show feedback message in the form
+  const showFeedback = (message, isError = false) => {
+    // Remove any existing feedback
+    const existingFeedback = document.querySelector('.error-submission-feedback');
+    if (existingFeedback) {
+      existingFeedback.remove();
+    }
+    
+    const feedbackElement = createFeedbackMessage(message, isError);
+    
+    // Insert at the top of the form
+    const form = document.querySelector('.error-submission-form');
+    form.insertBefore(feedbackElement, form.firstChild);
+    
+    // Auto-remove success messages after 5 seconds
+    if (!isError) {
+      setTimeout(() => {
+        if (document.body.contains(feedbackElement)) {
+          feedbackElement.remove();
+        }
+      }, 5000);
+    }
+  };
 
   // Handle form submission
   form.addEventListener('submit', async (event) => {
@@ -253,6 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Validate inputs
     if (!errorTypeSelect || !errorDescriptionInput) {
       console.error('Form elements not found');
+      showFeedback('Form error: Elements not found', true);
       return;
     }
     
@@ -262,9 +366,26 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Validate that required fields are not empty after sanitization
     if (!errorType || !errorDescription) {
-      alert('Please fill in all required fields with valid input');
+      showFeedback('Please fill in all required fields with valid input', true);
       return;
     }
+    
+    // Client-side validation matching server requirements
+    // Note: The error type is used as the title for the GitHub issue
+    if (errorType.length < 3 || errorType.length > 256) {
+      showFeedback('Error type (issue title) must be between 3 and 256 characters', true);
+      return;
+    }
+    
+    if (errorDescription.length < 2) {
+      showFeedback('Description (issue body) must be at least 1 character', true);
+      return;
+    }
+    
+    // Show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+    showFeedback('Submitting your report...', false);
     
     // Add endpoint information to the description
     const currentEndpoint = window.location.pathname;
@@ -279,11 +400,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Create GitHub issue and add to project
-    const githubSuccess = await createGitHubIssue(errorType, errorDescription);
-    if (githubSuccess) {
+    const result = await createGitHubIssue(errorType, errorDescription);
+    
+    // Reset button state
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit Report';
+    
+    if (result.success) {
       console.log('Successfully added issue to GitHub project');
+      showFeedback('Your report was submitted successfully!', false);
     } else {
-      console.warn('Failed to add issue to GitHub project, but continuing with submission');
+      console.warn(`Failed to add issue to GitHub project: ${result.message}`);
+      showFeedback(`Error: ${result.message || 'Failed to submit report'}`, true);
+      return; // Stop execution to prevent showing success animation
     }
     
     // Apply blur effect to the menu container
