@@ -160,20 +160,67 @@ document.addEventListener('DOMContentLoaded', () => {
       hideErrorSubmissionMenu();
     }
   });
-  
+
+  // Function to create a GitHub issue and add it to a project
+  async function createGitHubIssue(title, body) {
+    try {
+      // Validate input
+      if (!title || !body) {
+        console.error('Title and body are required');
+        return false;
+      }
+
+      // Backend server URL - replace with your actual deployed backend URL
+      const backendUrl = 'http://localhost:3000/api/create-issue';
+
+      // Make the API request to the backend
+      const response = await fetch(backendUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, body }),
+      });
+
+      // Parse the response
+      const data = await response.json();
+
+      // Log the result
+      if (data.success) {
+        console.log('Issue created successfully:', data.issueUrl);
+      } else {
+        console.error('Failed to create issue:', data.message);
+      }
+
+      // Return the success status
+      return data.success;
+    } catch (error) {
+      console.error('Error creating issue:', error);
+      return false;
+    }
+  }
+
   // Handle form submission
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     
     // Get form data
     const errorType = document.getElementById('errorType').value;
     const errorDescription = document.getElementById('errorDescription').value;
     
-    // Here you would typically send the data to a server
+    // Log the submission for debugging
     console.log('Error report submitted:', {
       type: errorType,
       description: errorDescription
     });
+    
+    // Create GitHub issue and add to project
+    const githubSuccess = await createGitHubIssue(errorType, errorDescription);
+    if (githubSuccess) {
+      console.log('Successfully added issue to GitHub project');
+    } else {
+      console.warn('Failed to add issue to GitHub project, but continuing with submission');
+    }
     
     // Apply blur effect to the menu container
     const menuContainer = document.querySelector('.error-submission-container');
