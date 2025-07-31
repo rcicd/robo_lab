@@ -167,6 +167,26 @@
 
 /* Button will use inline style for background-color based on field status */
 
+/* Success Animation Container */
+.success-animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-animation-fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Error Report Button */
+.error-report-button.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 767.98px) {
   .error-submission-container {
