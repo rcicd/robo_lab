@@ -258,13 +258,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Get and sanitize values
     const errorType = sanitizeInput(errorTypeSelect.value);
-    const errorDescription = sanitizeInput(errorDescriptionInput.value);
+    let errorDescription = sanitizeInput(errorDescriptionInput.value);
     
     // Validate that required fields are not empty after sanitization
     if (!errorType || !errorDescription) {
       alert('Please fill in all required fields with valid input');
       return;
     }
+    
+    // Add endpoint information to the description
+    const currentEndpoint = window.location.pathname;
+    errorDescription = `${errorDescription}\n\nEndpoint: ${currentEndpoint}`;
     
     // Log the submission for debugging (avoid logging sensitive data in production)
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -299,9 +303,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = document.createElement('video');
     
     // Validate and sanitize video source path
-    const videoPath = 'assets/video/check.webm';
+    const videoPath = '/assets/video/check.webm';
     // Only allow specific video files from our assets directory
-    if (!/^assets\/video\/(check|success)\.webm$/.test(videoPath)) {
+    if (!/^\/assets\/video\/(check|success)\.webm$/.test(videoPath)) {
       console.error('Invalid video source');
       return;
     }
