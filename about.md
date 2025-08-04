@@ -46,6 +46,20 @@ robo_team:
     description: "<a href='https://duckietown.com/platform/'>Duckietown site</a>"
     fit_style: "contain"
   
+  - name: "Kinova Gen3 Light"
+    image: "/assets/img/robots/kinova.png"
+    description: "<a href='https://www.kinovarobotics.com/product/gen3-lite-robots'>Kinova site</a>"
+    fit_style: "contain"
+
+  - name: "Snapmaker A350"
+    image: "/assets/img/robots/snapmaker.png"
+    description: "<a href='https://www.snapmaker.com/en-US/snapmaker-2'>Snapmaker site</a>"
+    fit_style: "contain"
+
+  - name: "Unitree Aliengo"
+    image: "/assets/img/robots/aliengo.png"
+    description: "<a href='https://shop.unitree.com/collections/education-industry?_gl=1*1mk0wp6*_up*MQ..*_ga*MTc3MTQ2Mzk3LjE3NTQzMDU5OTg.*_ga_0B96DDW0RK*czE3NTQzMDU5OTckbzEkZzEkdDE3NTQzMDYwMDgkajQ5JGwwJGgxNDk3NjU3MDUw'>Unitree site</a>"
+    fit_style: "contain"
 ---
 
 # About Us
