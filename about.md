@@ -15,7 +15,7 @@ team_members:
     
   - name: "Ilia Nechaev"
     image: "/assets/img/team/IliaNechaev.jpg"
-    description: "Research and educational assistant. <br><a href='https://github.com/SPGC'>GitHub</a>"
+    description: "Research and educational assistant. <br><a href='https:/info.spgc.dev'>Homepage</a>"
     
   - name: "Vladimir Shtarev"
     image: "/assets/img/team/VladimirShtarev.jpg"
