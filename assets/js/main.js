@@ -1,4 +1,4 @@
-// Получаем кнопку
+// Получаем кнопку для прокрутки наверх
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 // Показываем или скрываем кнопку при прокрутке страницы
@@ -22,3 +22,25 @@ function scrollToTop() {
     behavior: 'smooth'
   });
 }
+
+// Handle the error report button animation
+document.addEventListener('DOMContentLoaded', () => {
+  const errorBtn = document.getElementById('errorReportBtn');
+  if (errorBtn) {
+    // Check if the animation has already been played in this session
+    if (!sessionStorage.getItem('errorBtnAnimationPlayed')) {
+      // Use requestAnimationFrame for better performance
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          // Use classList instead of direct style manipulation
+          errorBtn.classList.add('visible');
+          // Mark that the animation has been played
+          sessionStorage.setItem('errorBtnAnimationPlayed', 'true');
+        }, 1000);
+      });
+    } else {
+      // If animation already played, just show the button without animation
+      errorBtn.classList.add('visible');
+    }
+  }
+});
