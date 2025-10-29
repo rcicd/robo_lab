@@ -123,6 +123,12 @@ flex: 1 0 auto;
   z-index: 0;
 }
 
+/* ===== Error Report Button ===== */
+.error-report-button.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 /* ===== КОЛОНКА С КОНТЕНТОМ ===== */
 .main-content-area {
   width: 100%;

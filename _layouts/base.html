@@ -26,5 +26,16 @@
 
 <button onclick="scrollToTop()" id="scrollTopBtn" title="Up">
   <img src="/assets/img/drone_up.png" alt="Up">
-</button>  <script src="{{ '/assets/js/main.js' | relative_url }}"></script> </body>
+</button>
+
+<button
+  onclick="window.location.href='https://github.com/rcicd/robo_lab/issues/new';"
+  id="errorReportBtn"
+  class="error-report-button"
+  style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; background-color: var(--primary-color); color: white; border: none; border-radius: 5px; padding: 8px 12px; cursor: pointer; font-size: 14px; transform: translateY(100px); transition: transform 0.5s ease-out, opacity 0.5s ease-out; opacity: 0;">
+  Report an Error
+</button>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
 </html>
