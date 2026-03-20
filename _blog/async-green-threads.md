@@ -286,7 +286,7 @@ that block whenever they want, and the runtime handles the rest.
 | Yielding | Explicit (`await`) | Implicit (timer / signal) |
 | Function coloring | Yes | No |
 | Scheduling | Cooperative | Can be preemptive |
-| Memory per task | Very small (just the state) | Small stack (a few KB) |
+| Memory per task | Tens to hundreds of bytes (just the state) | 2–8 KB typical |
 | Context switch cost | Minimal (state machine jump) | Low (save/restore registers) |
 
 Neither model is better (and I, personally, like both equally).
