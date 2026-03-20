@@ -248,7 +248,7 @@ And using it looks refreshingly simple:
 void send_to_server(char *addr) {
     int delay = 0;
     while (1) {
-        sleep(delay);  // blocking is fine - timer will preempt us (thanks to him for this :3)
+        sleep(delay);  // NOTE: sleep() blocks the entire OS thread, not just this green thread
         int resp = http_request(addr);
         delay = resp;
     }
@@ -267,6 +267,16 @@ int main() {
 
 Look at that! No `async`, no `await`: just regular functions
 that block whenever they want, and the runtime handles the rest.
+
+> Note: The example above simplifies one important detail. `sleep()` is a
+> blocking syscall that puts the entire OS thread to sleep - the timer signal
+> will interrupt it, but after the signal handler returns, `sleep()` resumes
+> waiting. So in this naive implementation, green threads would still block each
+> other on I/O. Real runtimes solve this by intercepting blocking syscalls and
+> replacing them with non-blocking equivalents. Go, for instance, has its own
+> netpoller that wraps all network I/O and parks goroutines instead of blocking
+> the OS thread. The scheduling idea here is correct - but a production runtime
+> needs this I/O layer too, which is arguably the harder part
 
 ## Comparing the two models
 
