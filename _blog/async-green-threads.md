@@ -110,7 +110,7 @@ t1.start()
 t2.start()
 ```
 
-No `async`. No `await`. Just normal, friendly functions. Beautiful even, maybe
+No `async`. No `await`. Just normal, friendly functions - beautiful, isn't it? 
 
 ### But threads are heavy
 
