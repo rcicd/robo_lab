@@ -201,7 +201,7 @@ void timer_handler(int sig) {
 
 void setup_preemption() {
     signal(SIGALRM, timer_handler);
-    // alarm rings every 10ms
+    // alarm fires every 10ms
     set_interval_timer(10);
 }
 ```
