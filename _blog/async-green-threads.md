@@ -77,7 +77,7 @@ The entire event loop freezes. No other task can run, because
 The event loop only gets control back at `await` points, and we just
 skipped one. Our concurrency model is **cooperative**: it only works
 when *everyone cooperates*. One bad function and the whole thing falls apart (in other words, cooperativity is good,
-but, as you may have noticed from your life expirience - it's not always practical :()
+but, as you may have noticed from your life experience - it's not always practical :()
 
 So we have two problems:
 
@@ -160,7 +160,7 @@ the state of the next one
 
 > Remark: this is exactly what the OS kernel does when
 > switching between OS threads, but we're doing it ourselves
-> in user space => we don;t need to call OS to help us => we shouldn't 
+> in user space => we don't need to call OS to help us => we shouldn't 
 > sacrifice performance 
 
 In simplified pseudocode (imagine the registers as variables):
