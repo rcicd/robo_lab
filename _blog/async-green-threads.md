@@ -225,7 +225,7 @@ struct Runtime {
 };
 
 GreenThread *pick_next_thread(Runtime *rt) {
-    // simple round-robin: just pick the next READY thread
+    // just pick first READY thread
     for (int i = 0; i < rt->thread_count; i++) {
         if (rt->threads[i]->status == READY) {
             return rt->threads[i];
