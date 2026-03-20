@@ -307,7 +307,7 @@ Green threads aren't just a theoretical exercise:
   are green threads on the JVM
 * **Rust** - to my surprise chose *not* to use green threads.
   Rust's `async/await` uses stackless coroutines, prioritizing
-  zero-cost abstractions over ergonomics
+  zero-cost abstractions over ergonomics (though they existed before v1.0)
 
 > Remark: if you want to go deeper into how these implementations
 > differ (stackful vs stackless, M:N threading, work-stealing schedulers),
