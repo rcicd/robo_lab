@@ -137,7 +137,7 @@ I even prepared a quote!!)
 
 > There are only two hard things in Computer Science: cache invalidation and naming things
 >
-> -- Martin Fowler
+> -- Phil Karlton
 
 ### What a green thread looks like
 
