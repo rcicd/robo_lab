@@ -1,8 +1,9 @@
 ---
 layout: blog-detail
 name: "Wait, there is more async?! (green threads)"
+image: "/assets/img/green-threads-thumbnail.png"
 # tg_post_link: "robocy/3"
-description: "Async/await wasn't enough, let's build some intuition about how async works __without__ `async` keyword!"
+description: "Async/await wasn't enough, let's build some intuition about how async works without `async` keyword!"
 tags:
   - "Fundamentals"
   - "Learning"
